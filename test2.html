@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size:0;
+        }
+        .container{
+
+        }
+        .container .tab li{
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            color:red;
+            border: 1px solid orangered;
+            border-right-width: 0;
+        }
+        .container .tab li:last-child{
+            border: 1px solid orangered;
+        }
+        .select{
+            background-color: Grey;
+        }
+        .container .tab li a{
+            text-decoration: none;
+
+            font-size:14px;
+        }
+        .container .content li{
+            width: 400px;
+            height: 300px;
+            border: 1px solid gray;
+            font-size:14px;
+            display: none;
+        }
+        .container .content .live{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="tab">
+        <li class="select"><a href="">item1</a></li>
+        <li><a href="">item2</a></li>
+        <li><a href="">item3</a></li>
+        <li><a href="">item4</a></li>
+    </ul>
+    <ul class="content">
+        <li class="mod live">item1 content</li>
+        <li class="mod">item2 content</li>
+        <li class="mod">item3 content</li>
+        <li class="mod">item4 content</li>
+    </ul>
+</div>
+<script>
+    window.onload = function(){
+        var tab = document.getElementsByClassName('tab');
+        var tab_li = tab[0].getElementsByTagName('li');
+        var content = document.getElementsByClassName('content');
+        var content_li = content[0].getElementsByTagName('li');
+        for(var i=0;i<tab_li.length;i++){
+            /*?? 获取所有的li标签*/
+            var self = tab_li[i];
+            tab_li[i].onclick =(function() {
+                 var self2 = self;
+                 var item = i;
+                 return function(){
+                     return showContent(self2,item);
+                 };
+            })(i);
+        }
+        function showContent(_this,item){
+            for(var i=0;i<content_li.length;i++){
+                tab_li[i].className='';
+                content_li[i].className = '';
+            }
+            _this.className='select';
+            content_li[item].className = 'live';
+            return false; // 冒泡
+        }
+    };
+</script>
+</body>
+</html>

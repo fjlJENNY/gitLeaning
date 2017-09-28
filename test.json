@@ -1,0 +1,67 @@
+{
+	"Columns": [{
+		"id": "TypeName",
+		"header": "要件类型",
+		"sort": "string",
+		"fillspace": 4
+	}, {
+		"id": "TypeCount",
+		"header": "份数",
+		"sort": false,
+		"fillspace": 0.5
+	}, {
+		"id": "Name",
+		"header": "文件名称",
+		"editor": "text",
+		"sort": "string",
+		"fillspace": 2
+	}, {
+		"id": "ApprovalNumber",
+		"header": "批号",
+		"editor": "text",
+		"sort": "string",
+		"fillspace": 1
+	}, {
+		"id": "PageCount",
+		"header": "页数",
+		"editor": "text",
+		"sort": "string",
+		"fillspace": 1
+	}, {
+		"id": "Remark",
+		"header": "备注",
+		"editor": "text",
+		"sort": "string",
+		"fillspace": 1
+	}, {
+		"id": "fileoperate",
+		"header": [{
+			"text": "操作",
+			"colspan": 2
+		}],
+		"tooltip": false,
+		"width": 160
+	}, {
+		"id": "typeId",
+		"header": "",
+		"tooltip": false,
+		"width": 100,
+		"actiontype": ["view", "delete", "addfile", "cancel", "deleterow", "reupload"]
+	}],
+	"Id": "548f1584-705d-4499-9637-3653070d8f88",
+	"Container": "6139fd29-6068-4502-96a3-bcbf99262ab0",
+	"Autoheight": true,
+	"minHeight": 50,
+	"autowidth": true,
+	"editable": true,
+	"spans": true,
+	"Select": "cell",
+	"Multiselect": true,
+	"Blockselect": true,
+	"rules": {},
+	"on": {},
+	"url": {
+		"$proxy": true
+	},
+	"view": "datatable"
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试tab</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<style type="text/css">
+
+		.tab .item{
+			display:inline-block;
+		}
+		.tab .item.active{
+			background: green;
+		}
+		.tab-contain .item{
+			display: none;
+		}
+		.tab-contain .item.active{
+			display: block;
+		}
+		.tab-contain{
+			width: 400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+<div class="tab">
+	<div class="item active"> 第一项</div>
+	<div class="item">第二项</div>
+	<div class="item">第三项</div>
+</div>
+<div class="tab-contain">
+	<div class="item active">第一项内容</div>
+	<div class="item">第二项内容</div>
+	<div class="item">第三项内容</div>
+</div>
+<script type="text/javascript">
+	var lastIndex = 0;
+	var currentIndex = 0;
+	$(".tab .item").click(function(event){
+		// $(this).parent().not($(this)).removeClass('active');
+		// $(this).addClass('active');
+		currentIndex = Array.prototype.indexOf($(".tab .item").get(),this);
+		console.log(currentIndex);
+		event.stopPropagation();
+	});
+</script>
+</body>
+</html>
