@@ -46,5 +46,15 @@
 		event.stopPropagation();
 	});
 </script>
+<script type="text/javascript">
+	function f() {
+		return g(3);
+	}
+	f();
+	function g(t){
+
+		console.log(t);
+	}
+</script>
 </body>
 </html>
