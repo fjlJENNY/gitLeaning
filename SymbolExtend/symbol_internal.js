@@ -20,3 +20,7 @@ console.log(arr3);
 
 
 //[3] Symbol.species(种类)
+
+// [4]Symbol.iterator  - 指向该对象的默认遍历器方法
+var myIterable = {};
+//对象进行　for ... of 循环时，会调用 Symbol.iterator 方法，返回该对象的默认遍历器
