@@ -28,3 +28,9 @@ colorpoint.toString();
 
 
 //【子类必须在constructor方法中调用super方法,否则新建实例时会报错】
+// 子类没有定义constructor，方法会被默认添加 （constructor），如果显式定义了，需要添加constructor
+
+
+
+// ======================================
+//类的prototype 属性 与__proto__属性
