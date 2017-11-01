@@ -32,7 +32,12 @@ console.log(p.toString());
 console.log("Object.keys",Object.keys(Point2.prototype));
 console.log("getOwnPropertyNames",Object.getOwnPropertyNames(Point2.prototype));
 
+
 class Bar{
+	constructor(x,y){
+		this.x = x; 
+		this.y = y;
+	}
 	doStuff(){
 		console.log('stuff' , this);
 	}
@@ -43,7 +48,8 @@ bar.doStuff();
 
 
 let methodName = {"a":3}; 
-let methodName2 = {"b":4}; // 用对象作为方法名称时，只会生成[object Object]
+let methodName2 = {"b":4};  // 用对象作为方法名称时，只会生成[object Object]
+let methodName3 = "getArea";  // 类的方法名，可以从表达式得到
 class Square{
 	constructor(){
 	}
@@ -52,6 +58,9 @@ class Square{
 
 	}
 	[methodName2](){
+
+	}
+	[methodName3](){
 
 	}
 }

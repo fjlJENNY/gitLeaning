@@ -1011,6 +1011,7 @@
   };
   // 返回对象上可用的函数名的排序列表。
   // Return a sorted list of the function names available on the object.
+  // 别名为
   // Aliased as `methods`
   _.functions = _.methods = function(obj) {
     var names = [];
@@ -1023,10 +1024,11 @@
   // Extend a given object with all the properties in passed-in object(s).
   _.extend = createAssigner(_.allKeys);
 
-  // Assigns a given object with all the own properties in the passed-in object(s)
+  // 在给定对象中 分配传入对象中的所有属性
+  // Assigns(给定) a given object with all the own properties in the passed-in(传入) object(s)
   // (https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
   _.extendOwn = _.assign = createAssigner(_.keys);
-
+  // 返回通过(断言)谓词测试的对象上的第一个键
   // Returns the first key on an object that passes a predicate test
   _.findKey = function(obj, predicate, context) {
     predicate = cb(predicate, context);
@@ -1036,7 +1038,7 @@
       if (predicate(obj[key], key, obj)) return key;
     }
   };
-
+  // 返回仅包含许可列表属性的对象的副本
   // Return a copy of the object only containing the whitelisted properties.
   _.pick = function(object, oiteratee, context) {
     var result = {}, obj = object, iteratee, keys;
@@ -1070,10 +1072,12 @@
     return _.pick(obj, iteratee, context);
   };
 
+  // 使用默认属性填充给定对象
   // Fill in a given object with default properties.
   _.defaults = createAssigner(_.allKeys, true);
-
+  // 创建从给定的原型对象继承的对象。
   // Creates an object that inherits from the given prototype object.
+  // 如果提供其他属性，那么它们将被添加到创建的对象。
   // If additional properties are provided then they will be added to the
   // created object.
   _.create = function(prototype, props) {
@@ -1108,7 +1112,7 @@
     return true;
   };
 
-
+  //`isEqual`的内部递归比较函数。
   // Internal recursive comparison function for `isEqual`.
   var eq = function(a, b, aStack, bStack) {
     // Identical objects are equal. `0 === -0`, but they aren't identical.
@@ -1138,6 +1142,7 @@
         return +a === 0 ? 1 / +a === 1 / b : +a === +b;
       case '[object Date]':
       case '[object Boolean]':
+        // 强制日期和布尔数字原始值。 日期由他们他们的毫秒比较 ，请注意，“NaN”的毫秒表示的无效日期不等同。
         // Coerce dates and booleans to numeric primitive values. Dates are compared by their
         // millisecond representations. Note that invalid dates with millisecond representations
         // of `NaN` are not equivalent.
@@ -1542,6 +1547,7 @@
     };
   });
 
+  // 将所有访问器Array函数添加到包装器。
   // Add all accessor Array functions to the wrapper.
   _.each(['concat', 'join', 'slice'], function(name) {
     var method = ArrayProto[name];
@@ -1549,16 +1555,19 @@
       return result(this, method.apply(this._wrapped, arguments));
     };
   });
-
+  // 从包装和链接对象中提取结果
   // Extracts the result from a wrapped and chained object.
   _.prototype.value = function() {
     return this._wrapped;
   };
 
+  // 为引擎操作中使用的某些方法提供展开代理
   // Provide unwrapping proxy for some methods used in engine operations
+  // 如算术和JSON字符串
   // such as arithmetic and JSON stringification.
   _.prototype.valueOf = _.prototype.toJSON = _.prototype.value;
   
+
   _.prototype.toString = function() {
     return '' + this._wrapped;
   };

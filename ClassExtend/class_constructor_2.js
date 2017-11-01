@@ -7,7 +7,7 @@ class Foo{
 	}
 }
 
-console.log(new Foo())
+console.log("instanceof Foo:",new Foo() instanceof Foo)
 
 // 2.类的构造函数，不用new 没法调用，会报错。 ES5 的构造函数 可以直接调用
 
@@ -23,9 +23,9 @@ class Point {
 }
 var point = new Point(2, 3);
 point.toString() // (2, 3)
-point.hasOwnProperty('x') // true
+console.log("point.hasOwnProperty('x')",point.hasOwnProperty('x')) // true
 point.hasOwnProperty('y') // true
-point.hasOwnProperty('toString')
+console.log("point.hasOwnProperty('toString')",point.hasOwnProperty('toString'));
 
 
 var p1 = new Point(2,3);
@@ -34,7 +34,7 @@ console.log(p1.__proto__ === p2.__proto__); // true  它们的原型都是Point.
 
 
 //3. 不存在变量提升  与ES5 差异
-//new Foo2(); // Foo2 is not a constructor
+//new Foo2();  // Foo2 is not a constructor
 class Foo2{}
 
 
@@ -46,9 +46,9 @@ const myClass = class Me{
 	}
 }
 
-console.log(myClass.name);
+console.log("类名",myClass.name);
 var m = new myClass(); // 这个类（通过表达式）的名字是 myClass, Me只在Class内部代码可用
-console.log(m.getClassName());
+console.log("内部类名",m.getClassName());
 //如果类的内部没用到的话，可以省略 Me ，也就是可以写成下面的形式。
 //const MyClass = class { /* ... */ };
 
@@ -85,20 +85,21 @@ class Widget2{
 	}
 	// 私有方法
 	[bar2](){
-
+		console.log("bar2");
 	}
 }
-
-console.log(new Widget2());
+new Widget2()[bar2]();
 
 
 //【this 的指向问题】
 class Logger{
 	constructor(){
+		console.log(this);
 		this.printName = this.printName.bind(this);
 	}
 	printName(name = "there"){
 		console.log(this);
+		console.log(this.print)
 		this.print(`Hello ${name}`);
 	}
 	print(text){
