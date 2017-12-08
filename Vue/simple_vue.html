@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script src="./dist/vue.js"></script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+<div id="app">
+	<p>{{a}}</p>	
+	<!-- <p>{{b}}</p> -->
+	<p v-bind:id="'id-'+id">{{amount }}</p>
+	<a :href="avatar">百度</a>
+	<!-- 绑定的avatar -> 指令的值限定为绑定表达式 -->
+	<p><span >&yen;{{price}}</span></p>
+	<input type="text" name="message" v-model="message">
+	<label><input type="radio" value="male" v-model="gender">男</label>
+	<label><input type="radio" value="female" v-model="gender">女</label>
+	<p>
+		<label><input type="checkbox" value="true" v-model="check">true</label>
+		<label><input type="checkbox" value="false" v-model="check">false</label>
+	</p>
+	<p>check 初始值为字符串，所以为单选 ，multiCheck 初始值为[] ，所以为多选</p>
+	<!-- check 初始值为字符串，所以为单选 ，multiCheck 初始值为[] ，所以为多选 -->
+
+	<p>
+		<label><input type="checkbox" value="1" v-model="multiCheck">1</label>
+		<label><input type="checkbox" value="2" v-model="multiCheck">2</label>
+	</p>
+
+	<p>
+		<select v-model="select">
+			<option>A</option>
+			<option>B</option>
+			<option>C</option>
+		</select>
+	</p>
+
+	<p>
+		<select v-model="multiSelect" multiple>
+			<option>A</option>
+			<option>B</option>
+			<option>C</option>
+		</select>
+	</p>
+	<p >{{message}}</p>
+	<p>男 或 女<span>{{gender}}</span></p>
+	<p>check :: <span>{{check}}</span></p>
+	<p>multicheck :: <span>{{multiCheck}}</span></p>
+	<p>select :: <span>{{select}}</span></p>
+	<p>mulitSelect :: <span>{{multiSelect}}</span></p>
+</div>
+
+<script type="text/javascript">
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			a:1,
+			id:"tom",
+			amount:10000,
+			avatar:"http://baidu.com",
+			cents:100,
+			message:"",
+			gender:"",
+			check:"",
+			multiCheck:[],
+			select:"",
+			multiSelect:[]
+		},
+		computed:{
+			price:{
+				set:function(newVal){
+					console.log(arguments);
+					this.cents = newVal * 100;
+				},
+				get:function(){
+					return (this.cents / 100).toFixed(2);
+				}
+			}
+		}
+	});
+</script>
+</body>
+</html>

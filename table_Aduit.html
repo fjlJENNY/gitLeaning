@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>table test</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		
+		thead th,tfoot th{
+			text-align: left;
+			background: grey;
+			color:white;
+		}
+		tbody th{
+			text-align:right;
+			background: lightgrey;
+			color:grey;
+		}
+		[colspan],[rowspan]{
+			font-weight: bold;
+			border:medium solid black;
+		}
+		thead [colspan],tfoot [colspan]{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<table>
+	<tr>
+		<td>Apple</td>
+		<td>Green</td>
+		<td>Medium</td>
+	</tr>
+	<tr>
+		<td>Oranges</td>
+		<td>Orange</td>
+		<td>Large</td>
+	</tr>
+</table>
+<table >
+	<thead>
+		<tr>
+			<th>工程名称</th>
+			<th>审查编号</th>
+			<th>合格证编号</th>
+			<th>工程相似度</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

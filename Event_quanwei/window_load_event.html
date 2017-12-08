@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文档加载事件</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+<img src="http://hpt-audit.oss-cn-hangzhou.aliyuncs.com/2ece4dcaf0374af8d230e100694c8c39" id="imgTest">
+<script type="text/javascript">
+	var whenReady = (function(){
+		var func = [];
+		var ready = false;
+		function handler(e){
+			if(ready){
+				return ;
+			}
+			if(e.type == "readystatechange" && document.readyState !== "complete"){
+				return ;
+			}
+			for(var i = 0;i<func.length;i++){
+				func[i].call(document);
+			}
+			ready  = true;
+			func = null;
+		}
+		if(document.addEventListener){
+			document.addEventListener("DOMContentLoaded",handler,false);
+			document.addEventListener("readystatechange",handler,false);
+			document.addEventListener("load",handler,false);
+		}else if(document.attachEvent){
+			document.attachEvent("onreadystatechange",handler);
+			window.attachEvent("onload",handler);
+		}
+		return function whenReady(f){
+			console.log(f);
+			if(ready){
+				f.call(document);
+			}else{
+				func.push(f);
+			}
+		}
+	}());
+</script>
+</body>
+</html>

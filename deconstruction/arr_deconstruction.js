@@ -33,7 +33,7 @@ let [tt = 4] = [null];
 let [kk = 5] = [undefined];
 console.log(tt,kk);
 
-// [!f] initialication expression 初始化为 表达式时 , 为惰性的 ，和上述行为一致
+// [!f] initialication expression 初始化为 表达式时 , 为惰性的 ，和上述行为一致(如果 sss 有值，就不会执行exp)
 function exp(){
 	return "ddd"
 }

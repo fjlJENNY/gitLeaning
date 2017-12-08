@@ -29,7 +29,7 @@ function foo(){
 // 2. NodeList
 // 3. arguments
 
-console.log(Array.from({length:3,"foo":"tom","23":"ss","1":"dd"}));
+console.log("currentArrayLike",Array.from({length:3,"foo":"tom","23":"ss","1":"dd"}));
 
 
 var fruits = ["Apple","Orange"];
@@ -52,3 +52,8 @@ var aa = ["zero","one","two","three"];
 
 let names = Array.prototype.map.call(ps,s=>{return s.textContent});
 console.log(names);
+
+
+
+console.log(['a','b',].fill(7));
+console.log(['a','b','c'].fill(7,1,2));// arguments: text,start,end(不包括end)

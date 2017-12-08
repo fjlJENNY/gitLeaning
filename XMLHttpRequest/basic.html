@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基础的 XMLHttpRequest 对象</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	var request = new XMLHttpRequest();
+	request.open("GET","url");
+	request.setRequestHeader("Content-Type","text/plain");
+	request.onreadystatechange = function(){
+		if(request.readyState === 4 && request.status === 200){
+			console.log(request.responseText);
+			//如果服务器发送 XML 或 XHTML 文档作为响应。能通过 responseXML 属性获得一个解析形式的 XML 文档
+			var type = request.getResponseHeader("Content-Type");
+			//if()
+		}
+	}
+	request.send(null);
+</script>
+</body>
+</html>

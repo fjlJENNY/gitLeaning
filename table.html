@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>table test</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		/*tr>th{
+			text-align: left;
+			background: grey;
+			color:white;
+		}
+		tr>th:only-of-type{
+			text-align:right;
+			background: lightgrey;
+			color:grey;
+		}*/
+		thead th,tfoot th{
+			text-align: left;
+			background: grey;
+			color:white;
+		}
+		tbody th{
+			text-align:right;
+			background: lightgrey;
+			color:grey;
+		}
+		[colspan],[rowspan]{
+			font-weight: bold;
+			border:medium solid black;
+		}
+		thead [colspan],tfoot [colspan]{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<table>
+	<tr>
+		<td>Apple</td>
+		<td>Green</td>
+		<td>Medium</td>
+	</tr>
+	<tr>
+		<td>Oranges</td>
+		<td>Orange</td>
+		<td>Large</td>
+	</tr>
+</table>
+<table >
+	<caption>Results of the 2011</caption>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th colspan="2">Color & Votes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Favorite:</th>
+			<td>Apples</td>
+			<td>Green</td>
+			<td>Medium</td>
+		</tr>
+		<tr>
+			<th>2nd Favorite</th>
+			<!-- <td>Oranges</td> -->
+			<td>Orange</td>
+			<td rowspan = "2">Oranges</td>
+			<td>Large</td>
+		</tr>
+		<tr>
+			<th>3rd Favorite</th>
+			<td colspan="2">Pomegranate</td>
+			<td>A kind of greeny-red</td>
+			<!-- <td>Varies from medium to large</td> -->
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th colspan="5">&copy;2011 Fruit Data Enterprise</th>
+		</tr>
+	</tfoot>
+</table>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基础事件</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<style type="text/css">
+
+	</style>
+	<style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        #myMenu{
+            list-style: none;
+            width: 150px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            position: absolute;
+            display: none;
+        }
+
+        #myMenu li{
+            border-bottom: 1px solid #ccc;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #myMenu li:hover{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<ul id="myMenu">
+    <li>右键想干什么？</li>
+    <li>想看源代码？</li>
+    <li>还是想审查元素？</li>
+</ul>
+<div id="testCapture"><button id="test">测试事件</button></div>
+<img src="http://hpt-audit.oss-cn-hangzhou.aliyuncs.com/2ece4dcaf0374af8d230e100694c8c39" id="imgTest">
+
+<input type="text" name="keyPress" id="testKeyPress">
+<p style="color:red">keypress 是 输出一个字符（不针对中文）</p>
+<p style="color:red">removeListener 方法  参数必须保证与注册参数保持一致</p>
+<a href="https://www.cnblogs.com/jesse007/p/5627167.html">中文输入法的处理</a>
+<p style="color: red">js 在词法上的作用域，在其定义的作用域而非调用的作用域中执行</p>
+<p style="color:red">通过js属性注册的事件，事件处理程序的返回值有时是非常有意义的。而使用addEventListener 或 attachEvent 调用 preventDefault() 方法 或 设置 returnValue 值</p>
+<p style="color:red">stopPropagation （阻止之后其他对象的事件处理程序不被调用 但同一对象的其他事件注册程序可以调用）和 stopImmediatePropagation（其他所有对象）</p>
+<script type="text/javascript">
+	var btn = document.getElementById("test");
+	var imgTest = document.getElementById("imgTest");
+	var myMenu = document.getElementById("myMenu");
+	var keyPress = document.getElementById("testKeyPress");
+	var testCapture = document.getElementById("testCapture");
+	btn.addEventListener("click",function(e){
+		console.log(arguments);
+		console.log(e);
+		console.log(window.event);
+	});
+	testCapture.addEventListener("click",function(e){
+		console.log("btn capture...");
+	},true);
+	window.addEventListener("contextmenu",function(e){
+		e.preventDefault();
+		myMenu.style.display = "block";
+	    //获取鼠标视口位置
+	    myMenu.style.top = event.clientY + "px";
+	    myMenu.style.left = event.clientX + "px";
+		return false;
+	});
+
+	window.addEventListener("click",function(e){
+		myMenu.style.display = "none";
+	});
+
+	window.addEventListener("mousewheel",function(e){
+		console.log("mousewheel");
+		console.log(e);
+	});
+
+	// keyPress.addEventListener("keypress",function(e){
+	// 	console.log("keypress");
+	// 	console.log(e);
+	// });
+	keyPress.addEventListener("textInput",log,true);
+	// 使用textinput事件替代 keypress
+	keyPress.addEventListener("textInput",function(e){
+		console.log("textinput");
+		keyPress.removeEventListener("textInput",log,true);
+		console.log(e);
+	});
+
+
+	
+	window.onbeforeunload = function(e){
+		return "测试";
+	}
+
+	window.addEventListener("beforeunload",function(event){
+		//return "测试";
+		var event = event || window.event;
+		if(event.preventDefault){
+			event.preventDefault();
+		}
+
+		if(event.returnValue){
+			event.returnValue = false;
+		}
+
+		// event.stopPropagation() 和 IE 上 cancelBubble = true 属性
+		return "测试";
+	});
+
+	// window.addEventListener("beforeunload", function (e) {
+	//   var confirmationMessage = "\o/";
+
+	//   (e || window.event).returnValue = confirmationMessage;     // Gecko and Trident
+	//   return confirmationMessage;                                // Gecko and WebKit
+	// });
+
+
+
+	// document.addEventListener("click",function(e){
+	// 	console.log(arguments);
+	// 	console.log(e);
+	// });
+
+	// imgTest.addEventListener("error",function(e){
+	// 	console.log("img error");
+	// 	console.log(e);
+	// 	e.target.src = "http://hz-mp.oss-cn-hangzhou.aliyuncs.com/avatar/118be60f71cae1112bf1da7e3b0fa6f3";
+	// });
+	imgTest.addEventListener("load",function(e){
+		console.log("img load");
+		console.log(e);
+	});
+
+	// window.addEventListener("scroll",function(e){
+	// 	console.log("srcoll");
+	// 	console.log(e);
+	// });
+	function log(){
+		console.log("load");
+	}
+	function log2(){
+		console.log("load");
+	}
+	//attachEvent , detachEvent
+	function addEvent(target,type,handler){
+		if(target.addEventListener){
+			target.addEventListener(type,handler,false);
+		}else{
+			target.attachEvent("on"+type,function(event){
+				return handler.call(target,event);
+			});
+		}
+	}
+	
+</script>
+</body>
+</html>
