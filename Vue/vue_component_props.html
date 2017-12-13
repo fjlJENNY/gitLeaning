@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue -- Component</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script src="./dist/vue.js"></script>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+<div id="app">
+	<!-- 特性 短横线 -->
+	<!-- 在子组件中定义prop时，使用了camelCase命名法。由于HTML特性不区分大小写，camelCase的prop用于特性时，需要转为 kebab-case（短横线隔开）。例如，在prop中定义的myName，在用作特性时需要转换为my-name。 -->
+
+	<!-- <child-component v-bind:子组件prop="父组件数据属性"></child-component> -->
+	
+	<my-component v-bind:my-name="name" v-bind:my-age = "age"></my-component>
+</div>
+<script type="text/x-template" id="myComponent">
+	<div>
+		<table>
+			<caption>This is a compoent !</caption>
+			<tbody>
+				<tr>
+					<th colspan="2">
+						子组件数据
+					</th>
+				</tr>
+				<tr>
+					<td>my Name</td>
+					<td>{{myName}}</td>
+				</tr>
+				<tr>
+					<td>my age</td>
+					<td>{{myAge}}</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+</script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			name:"keepfool",
+			age:28
+		},
+		components:{
+			'my-component':{
+				template:"#myComponent",
+				props:["myName","myAge"]
+			}
+		}
+	});
+</script>
+</body>
+</html>

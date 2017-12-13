@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue -- Component</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script src="./dist/vue.js"></script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+<div id="app">
+	<my-component></my-component>
+</div>
+<!-- 使用script 标签嵌入 html 标签 -->
+<!-- <script type="text/x-template" id="myComponent">
+	<div>This is a component!</div>
+</script> -->
+<template id="myComponent">
+	<div>This is a component!</div>
+</template>
+<script type="text/javascript">
+	Vue.component('my-component',{
+		template:"#myComponent"
+	});
+	var vm = new Vue({
+		el:"#app"
+	});
+</script>
+</body>
+</html>

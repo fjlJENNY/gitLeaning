@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue -- Component</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script src="./dist/vue.js"></script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+<div id="app">
+	<parent-component>
+	</parent-component>
+	<child-component>
+	</child-component>
+</div>
+<script type="text/javascript">
+	// var ChildComponent = Vue.extend({
+	// 	 template:"<div>This is Child component!</div>"
+	// });
+
+	var ParentComponent = Vue.extend({
+		//[tips]:Component template should contain exactly one root element. If you are using v-if on multiple elements, use v-else-if to chain them instead.
+		// template:"<div v-if='true'>This is a Parent Component</div><child-component v-else-if='true'></child-component>",
+		template:"<div><div>This is a Parent Component</div><child-component></child-component></div>",
+	});
+
+	Vue.component("parent-component",ParentComponent);
+	// Vue.component("child-component",ChildComponent);
+	
+
+	//[1.1] 以下是语法糖  Vue.extend , 外加上
+	Vue.component("child-component",{
+		template:"<div>This is Child component!</div>"
+	});
+
+	var vm = new Vue({
+		el:"#app",
+	});
+</script>
+</body>
+</html>

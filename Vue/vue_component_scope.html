@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Vue 中组件的作用域</title>
+	<meta charset="utf-8">
+	<!-- <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script> -->
+	<script src="./dist/vue.js"></script>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+<div id="app">
+	<my-component></my-component>
+</div>
+<script type="text/x-template" id="myComponent">
+	<div>
+		<h2>{{msg}}</h2>
+		<button v-on:click="showMsg">Show Message</button>
+	</div>
+</script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:"#app",
+		components:{
+			'my-component':{
+				template:"#myComponent",
+				props:["myName","myAge"],
+				data:function(){
+					return {
+						msg:"This is a component!"
+					}
+				},
+				methods:{
+					showMsg:function(){
+						console.log(this.msg);
+					}
+				}
+			}
+		},
+
+	});
+</script>
+</body>
+</html>

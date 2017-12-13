@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Vue 中 prop 绑定的类型 (修改子组件，父组件有影响)</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script src="./dist/vue.js"></script>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+<div id="app">
+	<table>
+		<caption>This is a  parent compoent !</caption>
+		<tbody>
+			<tr>
+				<th colspan="2">
+					父组件数据
+				</th>
+			</tr>
+			<tr>
+				<td>my Name</td>
+				<td>{{name}}</td>
+				<td><input type="text" v-model="name"/></td>
+			</tr>
+			<tr>
+				<td>my age</td>
+				<td>{{age}}</td>
+				<td><input type="text" v-model="age"/></td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- .aync 组件之间的双向绑定无效 -->
+	<!-- .once 单项绑定无效化 -->
+	<my-component v-bind:my-name.once = "name" v-bind:my-age.once = "age"></my-component>
+</div>
+<script type="text/x-template" id="myComponent">
+	<div>
+		<table>
+			<caption>This is a  children compoent !</caption>
+			<tbody>
+				<tr>
+					<th colspan="2">
+						子组件数据
+					</th>
+				</tr>
+				<tr>
+					<td>my Name</td>
+					<td>{{myName}}</td>
+					<td><input type="text" v-model="myName"/></td>
+				</tr>
+				<tr>
+					<td>my age</td>
+					<td>{{myAge}}</td>
+					<td><input type="text" v-model="myAge"/></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			name:"keepfool",
+			age:28
+		},
+		components:{
+			'my-component':{
+				template:"#myComponent",
+				props:["myName","myAge"]
+			}
+		}
+	});
+</script>
+</body>
+</html>
