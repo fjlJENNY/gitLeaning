@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue 自定义指令</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script src="../dist/vue.js"></script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+<div id="app">
+	<input type="text" name="test" v-focus>
+	<button v-bg-color="'red'">测试指令</button>
+	<div v-demo:foo.a.b = "message"></div>
+	<div v-demo2 = "{color:'white',text:'hello'}"></div>
+</div>
+<script type="text/javascript">
+	Vue.directive('focus',{
+		inserted:function(el){
+			el.focus();
+		}
+	});
+
+	Vue.directive("bgColor",{
+		bind:function(el,binding){
+			console.log(binding);
+			el.style.backgroundColor = binding.value;
+		}
+	});
+
+
+	// 如果定义的 为
+	//Vue.directive("directive-name",function(){})  --> bind 和 update 时触发相同行为
+
+
+
+	Vue.directive("demo",{
+		bind:function(el,binding,vnode){
+			var s = JSON.stringify;
+			el.innerHTML = 
+				'name:' + s(binding.name) + "<br>" + 
+				'value：' + s(binding.value) + '<br>' + 
+				'expression：' + s(binding.expression) + "<br>" +  // message
+				"argument：" + s(binding.arg) + "<br>" +    //foo
+				"modifiers ：" + s(binding.modifiers) + "<br>" + 
+				"vNode keys :" + Object.keys(vnode).join(", ")
+		}
+	});
+
+	Vue.directive("demo2",{
+		bind:function(el,binding,vnode){
+			var s = JSON.stringify;
+			el.innerHTML = 
+				'name:' + s(binding.name) + "<br>" + 
+				'value：' + s(binding.value) + '<br>' + 
+				'expression：' + s(binding.expression) + "<br>" +  // message
+				"argument：" + s(binding.arg) + "<br>" +    //foo
+				"modifiers ：" + s(binding.modifiers) + "<br>" + 
+				"vNode keys :" + Object.keys(vnode).join(", ")
+		}
+	});
+
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			message:"team"
+		}
+	});
+</script>
+</body>
+</html>
