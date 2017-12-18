@@ -48,7 +48,7 @@
 				"vNode keys :" + Object.keys(vnode).join(", ")
 		}
 	});
-
+	// 对象 "字面量"   字面量的概念
 	Vue.directive("demo2",{
 		bind:function(el,binding,vnode){
 			var s = JSON.stringify;
@@ -61,7 +61,8 @@
 				"vNode keys :" + Object.keys(vnode).join(", ")
 		}
 	});
-
+	
+	
 	var vm = new Vue({
 		el:"#app",
 		data:{
