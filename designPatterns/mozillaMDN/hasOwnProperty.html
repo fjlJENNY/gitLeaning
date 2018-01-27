@@ -1,0 +1,51 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Object hasOwnProperty</title>
+</head>  
+<body>
+<script type="text/javascript">
+    /*
+    *  for in 总是要遍历整个原型链，因此如果一个对象的继承层次太深的话会影响性能。
+    *   for in 循环不会遍历那些 enumerable 设置为false 的属性
+    *  hasOwnProperty 判断一个对象是否包含    自定义属性
+    *   ({}).hasOwnProperty.call(object,"propertyName");
+    */
+
+
+    // Shape - 父类(superclass)
+    function Shape(){
+        this.x = 0 ;
+        this.y = 0;
+    }
+
+    Shape.prototype.move = function(x,y){
+        this.x += x ;
+        this.y += y;
+        console.log("move");
+    }
+    // Rectangle - 子类(subclass)
+    function Rectangle(){
+        Shape.call(this);
+    }
+    var shape = new Shape();
+    var rect = new Rectangle();
+
+    console.log(rect,rect.move);
+    console.log(rect.hasOwnProperty("move"),shape.hasOwnProperty("x"));
+
+    // var buz = {
+    //     fog:"stack"
+    // }
+
+    for(var name in shape){
+        if(shape.hasOwnProperty(name)){
+            console.log("this is (" + name + ")  for sure. Value "  + shape[name]);
+        }else{
+            console.log("this is property 'in' not 'hasOwnProperty'",name);
+        }
+    }
+</script>
+</body>  
+</html>

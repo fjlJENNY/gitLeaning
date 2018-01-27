@@ -1,0 +1,37 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Object constructor</title>  
+</head>  
+<body>
+<script type="text/javascript">
+    var o = {};
+    console.log(o.constructor === Object);
+    console.log(o);
+
+    var o1 = new Object();
+    console.log(o1.constructor === Object);
+
+    var arr = [];
+    console.log(arr.constructor === Array);
+
+    var arr1 = new Array();
+    console.log(arr1.constructor === Array);
+
+    console.log(arr,arr1);
+
+
+    function Tree(name){
+        this.name = name;
+    }
+    var theTree = new Tree("Redwood");
+    console.log("'theTree': " , theTree , "'theTree.constructor': ", theTree.constructor);
+
+
+    console.log("test".constructor);
+
+    //Returns a reference to the Object constructor function that created the instance object.
+</script>
+</body>  
+</html>

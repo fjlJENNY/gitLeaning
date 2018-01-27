@@ -1,0 +1,46 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Object getPrototypeOf</title>  
+    
+</head>  
+<body>
+<script type="text/javascript">
+    // Shape - 父类(superclass)
+    function Shape(){
+        this.x = 0 ;
+        this.y = 0;
+    }
+
+    Shape.prototype.move = function(x,y){
+        this.x += x ;
+        this.y += y;
+        console.log("move");
+    }
+    // Rectangle - 子类(subclass)
+    function Rectangle(){
+        Shape.call(this);
+    }
+
+    // The Obejct which should be the prototype of newly-created object.
+    Rectangle.prototype = Object.create(Shape.prototype);
+
+    var rect = new Rectangle();
+
+    var shape = new Shape();
+
+    console.log(Object.getPrototypeOf(rect),Object.getPrototypeOf(shape),Object.getPrototypeOf(new Shape()),Object.getPrototypeOf(Shape));
+
+    console.log(Object.getPrototypeOf({}));
+    console.log(Object.getPrototypeOf(Object));
+    console.log(Object.getPrototypeOf(function(){}));
+
+    console.log(Object.getPrototypeOf("foo"));
+
+    // .............. ???    new Object() 和 Object.prototype 的关系 
+    var o = new Object();
+    console.log(Object.getPrototypeOf(o) === Object.prototype);
+</script>
+</body>  
+</html>

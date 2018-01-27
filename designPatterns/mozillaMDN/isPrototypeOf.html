@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Object isPrototypeOf</title>  
+    
+</head>  
+<body>
+<script type="text/javascript">
+    /*
+     *  isPrototypeOf  方法用于测试 一个对象 是否存在 另一个对象的 原型链上
+     * protoProject.isPrototypeOf(object) , 在该对象的原型链 上搜寻。
+    */
+    // Shape - 父类(superclass)
+    function Shape(){
+        this.x = 0 ;
+        this.y = 0;
+    }
+
+    Shape.prototype.move = function(x,y){
+        this.x += x ;
+        this.y += y;
+        console.log("move");
+    }
+    // Rectangle - 子类(subclass)
+    function Rectangle(){
+        Shape.call(this);
+    }
+
+    // Rectangle.prototype = Object.create(Shape.prototype);
+    // console.log(Rectangle.prototype.constructor ===  Shape);
+
+
+    // var rect = new Rectangle();
+    // console.log(Rectangle.prototype.isPrototypeOf(rect));
+
+
+    var rect = new Rectangle();
+    //rect.__proto__ = Shape.prototype;
+    console.log(Shape.prototype.isPrototypeOf(rect)); // isPrototypeOf 和 getPrototypeOf 相反
+
+</script>
+</body>  
+</html>

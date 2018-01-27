@@ -1,0 +1,30 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>如何创建对象--工厂模式</title>
+</head>  
+<body>
+<script type="text/javascript">
+    /*
+    *   工厂模式 -- 用函数来封装，以特定的接口创建对象的细节
+    */
+    function createPerson(name,age,job){
+        var obj = {
+            name:name,
+            age:age,
+            job:job,
+            sayName:function(){
+                return this.name;
+            }
+        }
+        return obj;
+    }
+
+    var person1 = createPerson("tom",12,"jj");
+    var person2 = createPerson("Grey",17,"tt");
+    // 无法识别对象的类型
+    console.log(person1,person2,person1 === person2 , person1.sayName === person2.sayName );
+</script>
+</body>  
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>dom 测试</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <li id="I-85568F90-DA37-4A29-9618-CAF7AA531DC9I-ebd13647-a632-41d6-a01d-e30fb9597443" uid="ebd13647-a632-41d6-a01d-e30fb9597443">
+        <input type="checkbox" id="check-85568F90-DA37-4A29-9618-CAF7AA531DC9ebd13647-a632-41d6-a01d-e30fb9597443" uid="ebd13647-a632-41d6-a01d-e30fb9597443" checked>
+        <label class="dg_toolbar" for="check-85568F90-DA37-4A29-9618-CAF7AA531DC9ebd13647-a632-41d6-a01d-e30fb9597443">
+            <ul class="row align-justify">
+                <div class="unitinfo show_amount" id="T-85568F90-DA37-4A29-9618-CAF7AA531DC9-ebd13647-a632-41d6-a01d-e30fb9597443">
+                    <div class="unitinfo_icon"></div>1#</div>
+                <ul class="large-6 medium-6 small-6 columns">
+                    <ul class="menu" id="I-85568F90-DA37-4A29-9618-CAF7AA531DC9I-ebd13647-a632-41d6-a01d-e30fb9597443_tools">
+                    </ul>
+                </ul>
+                </div>
+        </label>
+    </li>
+</body>
+<script type="text/javascript">
+    Overall.prototype.GetChartOption= function (data) {
+        var option = {
+            animation: false,
+            color: ['#767676'],
+            tooltip: {
+                show: false,
+            },
+            animationDurationUpdate: 1500,
+            animationEasingUpdate: 'quinticInOut',
+            series : [
+                {
+                    type: 'graph',
+                    layout: 'none',
+                    symbol: 'roundRect',
+                    symbolSize: [130, 30],
+                    label: {
+                        normal: {
+                            show: true
+                        }
+                    },
+                    edgeSymbol: ['none', 'arrow'],
+                    edgeSymbolSize: [0, 15],
+                    edgeLabel: {
+                        normal: {
+                            textStyle: {
+                                fontSize: 20
+                            }
+                        }
+                    },
+                    data: [{
+                        name: '建设单位报建',
+                        x: 0,
+                        y: 100,
+                    }, {
+                        name: '设计/勘察单位上传图纸',
+                        x: 200,
+                        y: 100,
+                    }, {
+                        name: '设计/勘察单位完善信息',
+                        x: 200,
+                        y: 300
+                    }, {
+                        name: '建设单位送审',
+                        x: 400,
+                        y: 100
+                    }, {
+                        name: '审查机构收图',
+                        x: 600,
+                        y: 100
+                    }, {
+                        name: '审查机构政审',
+                        x: 800,
+                        y: 100
+                    }, {
+                        name: '建设单位补资料',
+                        x: 1000,
+                        y: 100
+                    }, {
+                        name: '政审通过',
+                        x: 1000,
+                        y: 300
+                    }, {
+                        name: '审查机构任务分配',
+                        x: 800,
+                        y: 300
+                    }, {
+                        name: '审查机构技术审查',
+                        x: 800,
+                        y: 500,
+                    }, {
+                        name: '建设单位接收审查意见',
+                        x: 800,
+                        y: 700
+                    }, {
+                        name: '设计/勘察单位回复意见',
+                        x: 800,
+                        y: 900
+                    }, {
+                        name: '建设单位送审意见回复',
+                        x: 1000,
+                        y: 900
+                    }, {
+                        name: '审查机构签收意见回复',
+                        x: 1000,
+                        y: 500
+                    }, {
+                        name: '审查机构生成合格证',
+                        x: 600,
+                        y: 500
+                    }, {
+                        name: '项目审查通过',
+                        x: 600,
+                        y: 900
+                    }, {
+                        name: '审查机构审查费计算',
+                        x: 200,
+                        y: 500
+                    }, {
+                        name: '审查机构审查费校对',
+                        x: 200,
+                        y: 700
+                    }, {
+                        name: '审查机构审查费审核',
+                        x: 200,
+                        y: 900
+                    }, {
+                        name: '建设单位缴费',
+                        x: 0,
+                        y: 900
+                    }, {
+                        name: '审查费缴费完成',
+                        x: 0,
+                        y: 700
+                    }],
+                    // links: [],
+                    links: [{
+                        source: '建设单位报建',
+                        target: '设计/勘察单位上传图纸',
+                        lineStyle: {
+                            normal: { curveness: 0.5 }
+                        }
+                    }, {
+                        source: '建设单位报建',
+                        target: '设计/勘察单位完善信息'
+                    }, {
+                        source: '设计/勘察单位上传图纸',
+                        target: '建设单位送审',
+                        lineStyle: {
+                            normal: { curveness: 0.5 }
+                        }
+                    }, {
+                        source: '设计/勘察单位完善信息',
+                        target: '建设单位送审'
+                    }, {
+                        source: '建设单位送审',
+                        target: '审查机构收图',
+                        lineStyle: {
+                            normal: { curveness: 0.5 }
+                        }
+                    }, {
+                        source: '审查机构收图',
+                        target: '审查机构政审',
+                        lineStyle: {
+                            normal: { curveness: 0.5 }
+                        }
+                    }, {
+                        source: '审查机构政审',
+                        target: '建设单位补资料',
+                        lineStyle: {
+                            normal: { curveness: 0.4 }
+                        }
+                    }, {
+                        source: '建设单位补资料',
+                        target: '审查机构政审',
+                        lineStyle: {
+                            normal: { curveness: -0.5 }
+                        }
+                    }, {
+                        source: '审查机构政审',
+                        target: '政审通过'
+                    }, {
+                        source: '审查机构收图',
+                        target: '审查机构任务分配'
+                    }, {
+                        source: '审查机构任务分配',
+                        target: '审查机构技术审查'
+                    }, {
+                        source: '审查机构技术审查',
+                        target: '建设单位接收审查意见'
+                    }, {
+                        source: '建设单位接收审查意见',
+                        target: '设计/勘察单位回复意见'
+                    }, {
+                        source: '设计/勘察单位回复意见',
+                        target: '建设单位送审意见回复',
+                        lineStyle: {
+                            normal: { curveness: 0.5 }
+                        }
+                    }, {
+                        source: '建设单位送审意见回复',
+                        target: '审查机构签收意见回复'
+                    }, {
+                        source: '审查机构签收意见回复',
+                        target: '审查机构技术审查',
+                        lineStyle: {
+                            normal: { curveness: -0.5 }
+                        }
+                    }, {
+                        source: '审查机构技术审查',
+                        target: '审查机构生成合格证',
+                        lineStyle: {
+                            normal: { curveness: -0.5 }
+                        }
+                    }, {
+                        source: '审查机构生成合格证',
+                        target: '项目审查通过'
+                    }, {
+                        source: '审查机构收图',
+                        target: '审查机构审查费计算'
+                    }, {
+                        source: '审查机构审查费计算',
+                        target: '审查机构审查费校对'
+                    }, {
+                        source: '审查机构审查费校对',
+                        target: '审查机构审查费审核',
+                    }, {
+                        source: '审查机构审查费审核',
+                        target: '建设单位缴费',
+                        lineStyle: {
+                            normal: { curveness: -0.5 }
+                        }
+                    }, {
+                        source: '建设单位缴费',
+                        target: '审查费缴费完成'
+                    }],
+                    lineStyle: {
+                        normal: {
+                            opacity: 0.9,
+                            width: 2,
+                            curveness: 0
+                        }
+                    }
+                }
+            ]
+        };
+        return option;
+    }
+</script>
+</html>

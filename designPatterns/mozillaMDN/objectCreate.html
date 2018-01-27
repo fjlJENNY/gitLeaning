@@ -1,0 +1,60 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Object create</title>  
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg"> -->
+</head>  
+<body>
+<script type="text/javascript">
+    // Shape - 父类(superclass)
+    function Shape(){
+        this.x = 0 ;
+        this.y = 0;
+    }
+
+    Shape.prototype.move = function(x,y){
+        this.x += x ;
+        this.y += y;
+        console.log("move");
+    }
+    // Rectangle - 子类(subclass)
+    function Rectangle(){
+        Shape.call(this);
+    }
+
+    Rectangle.prototype = Object.create(Shape.prototype);
+    var rect = new Rectangle();
+    console.log(rect,rect.move);
+
+
+    for(var i in rect){
+        console.log(i);
+    }
+
+    console.log(Object.getPrototypeOf(rect));
+
+
+    // Object.create(proto[,propertiesObject])
+
+    var o = Object.create(Shape.prototype,{
+        "tom":{
+            writable:true,
+            value:"cat"
+        },
+        "jenny":{
+            writable:true,
+            value:"dongdong"
+        }
+    });
+    // TypeError : Property description must be an object.
+    // var o = Object.create(Shape.prototype,{
+    //     "tom":["cat"],
+    //     "jenny":"dongdong"
+    // })
+    console.log(o,Shape.hasOwnProperty("tom"),o.hasOwnProperty("tom"),o.hasOwnProperty("x"),Object.getPrototypeOf(o));
+    console.log(o.tom,(new Shape()).tom);
+</script>
+</body>  
+</html>

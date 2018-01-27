@@ -11,7 +11,9 @@
   // Establish the root object, `window` in the browser, or `exports` on the server.
   var root = this;
 
+
   // Save the previous value of the `_` variable.
+  // 保存前面的 '_' 变量
   var previousUnderscore = root._;
 
   // Save bytes in the minified (but not gzipped) version:
@@ -45,7 +47,7 @@
   };
 
   // Export the Underscore object for **Node.js**, with
-  // backwards-compatibility for the old `require()` API. If we're in
+  // backwards-compatibility （向后兼容性）for the old `require()` API. If we're in
   // the browser, add `_` as a global object.
   if (typeof exports !== 'undefined') {
     if (typeof module !== 'undefined' && module.exports) {

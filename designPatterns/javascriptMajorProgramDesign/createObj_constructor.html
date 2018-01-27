@@ -1,0 +1,57 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>如何创建对象--构造函数模式</title>
+</head>  
+<body>
+<script type="text/javascript">
+    /*
+    *   构造函数模式 --  如何创建一个对象
+        1.在 new 的时候创造一个新的对象
+        2.将构造函数的作用域赋给新对象（因此this 指向这个新对象）
+        3.执行构造函数内的代码
+        4.返回新对象
+    */
+    function Person(name,age,job){
+        
+        this.name=name;
+        this.age = age;
+        this.job = job;
+        this.sayName = function(){
+            return this.name;
+        }
+    }
+
+
+    var person1 = new Person("tom",12,"jj");
+    var person2 = new Person("Grey",17,"tt");
+
+    // person1 的 constructor(构造函数) 属性,该属性指向 Person  --  根据上述函数模式（如何创建一个对象）
+    
+    console.log(person1,person2,person1 === person2 , person1.sayName === person2.sayName );
+
+    // 一般使用 instanceof 操作符 判断对象类型
+    console.log(person1 instanceof Object , person2 instanceof Array); // true / false
+
+
+
+    var o = {};
+    Person.call(o,"king",37,"person");
+    console.log(o , o.hasOwnProperty("job"));
+    // function Tom (){
+    //     var s = "sss";
+    //     this.getS = function(){
+    //         return s;
+    //     }
+    //     return this.getS;
+    // }
+
+    // var tom = Tom();
+    // console.log(tom());
+
+    // var tom2 = new Tom();
+    // console.log(tom2());
+</script>
+</body>  
+</html>
