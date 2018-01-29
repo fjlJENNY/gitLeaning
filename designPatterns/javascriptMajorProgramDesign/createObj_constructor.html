@@ -38,7 +38,8 @@
 
     var o = {};
     Person.call(o,"king",37,"person");
-    console.log(o , o.hasOwnProperty("job"));
+    console.log(o , o.hasOwnProperty("job")); // Object{age:37,job:"person",name:"king",sayName:function(){}} / true
+    
     // function Tom (){
     //     var s = "sss";
     //     this.getS = function(){
@@ -47,8 +48,10 @@
     //     return this.getS;
     // }
 
+
     // var tom = Tom();
     // console.log(tom());
+
 
     // var tom2 = new Tom();
     // console.log(tom2());

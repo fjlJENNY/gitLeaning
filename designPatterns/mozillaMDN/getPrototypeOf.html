@@ -22,18 +22,21 @@
     function Rectangle(){
         Shape.call(this);
     }
-
-    // The Obejct which should be the prototype of newly-created object.
+    // Object.create(proto[,propertiesObject])
+    // [proto]The Obejct which should be the prototype of newly-created object.
     Rectangle.prototype = Object.create(Shape.prototype);
-
+    //Rectangle = Object.create(Shape.prototype);
     var rect = new Rectangle();
 
     var shape = new Shape();
-
-    console.log(Object.getPrototypeOf(rect),Object.getPrototypeOf(shape),Object.getPrototypeOf(new Shape()),Object.getPrototypeOf(Shape));
-
+    //todo: 理解Object.getPrototypeOf()
+    console.log(rect,Object.getPrototypeOf(rect)); // Shape{} rect.__proto__(Shape), rect.__proto__(Object{move:function(x,y)})
+    console.log(shape,Shape,Object.getPrototypeOf(shape));
+    console.log(Object.getPrototypeOf(new Shape()));
+    console.log(Object.getPrototypeOf(Shape));
     console.log(Object.getPrototypeOf({}));
     console.log(Object.getPrototypeOf(Object));
+    console.log(Object.prototype);
     console.log(Object.getPrototypeOf(function(){}));
 
     console.log(Object.getPrototypeOf("foo"));

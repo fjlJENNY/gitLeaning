@@ -16,6 +16,8 @@
        1. 理解person1 , Person 值 // 2.person1 是实例对象,对象类型是Person
     */
     console.log(person1,Person,person1.constructor,Person.prototype.constructor);
+    // 实例对象的 constructor ，是 __proto__ 上的 constructor
+    //Person{} , function Person(){...}, function Person(){...} , function Person(){...}
 
     var person2 = new Person();
     person1.name = "Grey";
@@ -30,13 +32,13 @@
 
         // ? 屏蔽了原型中 不可枚举 属性的实例 也会在 for-in  循环中返回
     */
-    //实例 与 原型 之间的 松散 连接关系 。 原型中重新声明方法 （如下） , 这样实例也是可以访问这个方法。
+    // 实例 与 原型 之间的 松散 连接关系 。 原型中重新声明方法 （如下） , 这样实例也是可以访问这个方法。
     Person.prototype.sayHi = function(){
         console.log("hi");
     }
     console.log(person1.sayHi());
 
-    //但是下面这种情况 不适合 上述情况。 （重写整个原型对象 , 见 p156）  
+    //但是下面这种情况 不适合 上述情况。 （重写整个原型对象 , 见 p156） 
 
     function Person2(){
 
