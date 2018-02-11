@@ -1,0 +1,42 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Arrow functions used as methods </title>
+    <style type="text/css">  
+        legend {
+            -webkit-padding-start: 12px;
+            -webkit-padding-end: 12px;
+        }
+        .form{
+            padding: 12px;
+        }
+    </style> 
+</head>  
+<body> 
+<script type="text/javascript">
+    //"use strict";
+    var obj = {
+        i:10,
+        b:()=>console.log(this.i,this),
+        c:function(){
+            console.log(this.i,this);
+        }
+    }
+    obj.b();
+    obj.c();
+
+    var obj ={
+        a:10
+    }
+
+    Object.defineProperty(obj,"b",{
+        get:()=>{
+            console.log(this.a,typeof this.a,this);
+            return this.a + 10;
+        }
+    });
+    obj.b;
+</script> 
+</body>  
+</html>

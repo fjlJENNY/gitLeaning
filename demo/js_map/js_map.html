@@ -1,0 +1,73 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Map</title>
+    <style type="text/css">  
+        legend {
+            -webkit-padding-start: 12px;
+            -webkit-padding-end: 12px;
+        }
+        .form{
+            padding: 12px;
+        }
+    </style> 
+</head>  
+<body> 
+<script type="text/javascript">
+    //iterable 可以是一个数组 或者 iterable 对象
+   // new Map("iterable")
+
+    // Map 对象保存 键值对。任何值(对象或者原始值) 都可以作为一个键 或 一个值
+
+    // 键的 比较 是基于 SameValueZero 算法。NaN 是与 NaN 相同的。
+
+    // 先前 使用 对象来处理集合的地方。对象应该用其字段和方法来作为记录的。
+
+    // 如果你不确定要使用哪个 ， 运行之前 key 是否为未知的，是否需要动态地查询 key 呢？
+
+
+    var myMap = new Map();
+    var keyObj = {};
+    var keyFunc = function(){};
+    var keyString = "a string";
+
+    myMap.set(keyString,"和 键'a string 关联的值'");
+    myMap.set(keyObj,"和键 keyObj 关联的值");
+    myMap.set(keyFunc,"和键 keyFunc 关联的值");
+
+    console.log(myMap.size);
+    console.log(myMap.get(keyObj));
+    console.log(myMap.get({}));
+    console.log(myMap.get("a string"));
+
+    console.log(keyObj === {});
+
+
+    var myMap2 = new Map();
+    myMap2.set(0, "zero");
+    myMap2.set(1, "one");
+    for (var [key, value] of myMap2) {
+      console.log(key + " = " + value);
+    }
+    // 将会显示两个log。一个是"0 = zero"另一个是"1 = one"
+
+    for (var key of myMap2.keys()) {
+      console.log(key);
+    }
+    // 将会显示两个log。 一个是 "0" 另一个是 "1"
+
+    for (var value of myMap2.values()) {
+      console.log(value);
+    }
+    // 将会显示两个log。 一个是 "zero" 另一个是 "one"
+
+    for (var [key, value] of myMap2.entries()) {
+      console.log(key + " = " + value);
+    }
+    // 将会显示两个log。 一个是 "0 = zero" 另一个是 "1 = one"
+
+    // for(var [key,value] of myMap2.entries()){console.log(key + "=" + value)}
+</script> 
+</body>  
+</html>

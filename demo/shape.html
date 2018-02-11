@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>semantic shape</title> 
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script> 
+    <link rel="stylesheet" href="./sematic/semantic.css">  
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <script type="text/javascript" src="./sematic/semantic.js"></script>
+    <script type="text/javascript" src="./sematic/init.js"></script>
+    <style type="text/css">
+    </style> 
+</head>  
+<body> 
+    <div class="ui  shape">
+        <div class="sides">
+            <div class="active side">
+                <button class="ui basic button">
+                    全部展开
+                    <i class=" right empty angle  up  icon"></i>
+                </button>
+            </div>
+            <div class="side">
+                <button class="ui basic button">
+                    <i class=" angle  empty  down  icon"></i>
+                    全部收起
+                </button>
+            </div>
+        </div>
+    </div>
+    <button class="sho">ss</button>
+    <script type="text/javascript">
+        $('.shape').shape();
+        $(".ui.shape").click(function(){
+            window.event.preventDefault();
+            window.event.stopPropagation();
+            $('.shape').shape('flip up');
+            return false;
+        })
+        //setInterval(function(){
+            
+        //},1000)
+        $(".sho").click(function(){
+            $('.shape').shape('flip up');
+        })
+    </script>
+</body>  
+</html>

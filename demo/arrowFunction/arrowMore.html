@@ -1,0 +1,29 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>箭头函数 More example</title>
+    <style type="text/css">  
+        legend {
+            -webkit-padding-start: 12px;
+            -webkit-padding-end: 12px;
+        }
+        .form{
+            padding: 12px;
+        }
+    </style> 
+</head>  
+<body> 
+<script type="text/javascript">
+    var simple = a => a > 15 ? 15 : a;
+    console.log(simple(16));
+    console.log(simple(10));
+
+    var arr = [5,6,13,0,1,18,23];
+    console.log(arr.reduce((a,b) => a + b));
+    console.log(arr.filter(v=> v%2 == 0));
+    console.log(arr.map(v=>v*2));
+    
+</script> 
+</body>  
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>CSS实战 - 波纹扩散效果</title> 
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script> 
+    <link rel="stylesheet" href="./sematic/semantic.css">  
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <script type="text/javascript" src="./sematic/semantic.js"></script>
+    <script type="text/javascript" src="./sematic/init.js"></script>
+    <style type="text/css">  
+        legend {
+            -webkit-padding-start: 12px;
+            -webkit-padding-end: 12px;
+        }
+        .form{
+            padding: 12px;
+        }
+    </style> 
+</head>  
+<body> 
+    <div class="ui basic  buttons">
+        <button class="ui  button">申请复核</button>
+        <button class="ui  button">复核完成</button>
+        <button class="ui  button">审查完成</button>
+        <button class="ui  button">审查通过</button>
+    </div>
+    <div>
+        <h4 class="ui header">
+          <div class="content">
+            Trending repos
+            <div class="ui floating dropdown">
+              <div class="text">today</div>
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <div class="header">Adjust time span</div>
+                <div class="active item" data-text="today">Today</div>
+                <div class="item" data-text="this week">This Week</div>
+                <div class="item" data-text="this month">This Month</div>
+              </div>
+            </div>
+          </div>
+        </h4>
+    </div>
+    <div class="ui checkbox">
+        <input type="checkbox" name="majorCheckAll">
+        <label>全选</label>
+    </div>
+    <!-- <button class="ui icon button circular">
+        <i class="search icon"></i>
+    </button> -->
+
+    <div class="ui mini action input">
+        <button class="ui icon button">
+            <i class="search icon"></i>
+        </button>
+        <input type="text" placeholder="搜索...">
+        <button class="ui icon button">
+            <i class="dropdown icon"></i>
+        </button>
+    </div>
+
+    <div class="form">
+        <fieldset>
+            <legend>筛选</legend>
+            <button class="ui button">图名</button>
+        </fieldset>
+    </div>
+</body>  
+</html>
