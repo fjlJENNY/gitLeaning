@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Template</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+	<script type="text/javascript" src="semantic/dist/semantic.js"></script>
+</head>
+<body>
+<div class="ui input">
+	<input type="text" name="input" placeholder="Search....">
+</div>
+<div class="ui input focus">
+	<input type="text" name="search" placeholder="Searching ... ">
+</div>
+<div class="ui  icon input loading">
+	<input type="text" name="Searching" placeholder="Searching..">
+	<i class="search icon"></i>
+</div>
+<div class="ui disabled input">
+	<input type="text" name="Searching" placeholder="Searching..">
+</div>
+<div class="ui  input icon">
+	<input type="text" name="Searching" placeholder="Searching..">
+	<i class="search icon"></i>
+</div>
+<div class="ui error input icon">
+	<input type="text" name="Searching" placeholder="Searching..">
+	<i class="search icon"></i>
+</div>
+<div class="ui  input left icon">
+	<input type="text" name="Searching" placeholder="Searching..">
+	<i class="users icon"></i>
+</div>
+<div class="ui icon input">
+	<input type="text" name="Searching" placeholder="Searching..">
+	<i class="caret down link icon"></i>
+</div>
+<div class="ui icon input">
+	<input type="text" name="Searching" placeholder="Searching..">
+	<i class="search link icon" id="search-item"></i>
+</div>
+<div class="ui action input">
+	<input type="text" name="Searching" placeholder="Searching..">
+	<button class="ui button">搜索</button>
+</div>
+<div class="ui massive icon input">
+	<input type="text" name="Searching" placeholder="Searching...">
+	<i class="search icon"></i>
+</div>
+<script type="text/javascript">
+$('#search-item').click(function(){
+	console.log('abc');
+	console.log($(this).prev().val())
+});
+</script>
+</body>
+</html>

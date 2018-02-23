@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>webix basic</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../dist/webix.css" type="text/css"> 
+    <script src="../dist/webix.js" type="text/javascript"></script>  
+    </head>
+    <body>
+    	<div id="areA"></div>
+    	<div id="areB"></div>
+    	<button id="demo">设置email</button>
+    	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+    	<!-- <script type="text/javascript" src="./data/testdata.js"></script> -->
+        <script type="text/javascript" charset="utf-8">
+    		webix.ui({
+    			container:"areA",
+    			view:"form",
+    			scroll:false,
+    			width:300,
+    			elements:[
+    			{view:"text",label:"Email",id:"fname"},
+    			{view:"text",type:"password",label:"password"},
+    			{margin:5,rows:[
+    				{view:"button",label:"Login",type:"form"},
+    				{view:"button",label:"Cancel"}
+    			]}
+    			]
+    		});
+    		$("#demo").click(function(){
+    			$$("fname").setValue("tom cat")
+    		});
+    		// webix.ui({
+    		// 	view:"form",
+    		// 	container:"areB",
+    		// 	width:300,
+    		// 	elements:[
+    		// 		{rows:[{template:"Alpha fields",type:"section"},
+    		// 			{view:"text",label:"Alpha 1"},
+    		// 			{view:"text",label:"Alphb 2"}
+    		// 		]},
+    		// 		{
+    		// 			rows:[
+    		// 			{
+    		// 				type:"section",template:"Alpha fields 2"
+    		// 			},{
+    		// 				view:"text",label:"test"
+    		// 			}]
+    		// 		}
+    		// 	]
+    		// });
+    		webix.ui({
+			    view:"form",
+			    container:"areB",
+			    width:300,
+			    elements:[
+			        {view:"text", label:"First Name"},
+			        {view:"text", label:"Last Name"}
+			    ],
+			    elementsConfig:{
+			        labelPosition:"top"
+			    }
+			});
+        </script>
+    </body>
+</html>

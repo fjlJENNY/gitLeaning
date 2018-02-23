@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>财务管理系统</title>
+	<meta charset="utf-8">
+	<link href="https://cdn.bootcss.com/semantic-ui/2.2.14/semantic.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../lib/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/lib/themes/black/easyui.css">
+	<script src="https://cdn.bootcss.com/semantic-ui/2.2.14/semantic.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/lib/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../css/page/app.css">
+	<link rel="stylesheet" type="text/css" href="../../css/page/finance.css">
+	<script type="text/javascript" src="../../lib/uuid.js"></script>
+	<script type="text/javascript" src="../../data/userData.js"></script>
+</head>
+<body>
+<div id="finance_wrapper">
+	<div class="header">
+		<div class="logo-wrap">Logo</div>
+		<div class="menu-area">
+			<a href="javascript:;" title="切换导航栏">
+				<i class="ico-menu"></i>
+			</a>
+		</div>
+		<!-- <div class="msg">
+			<a href="">
+				<i class="ico-bell"></i>
+				<span>5</span>
+			</a>
+		</div> -->
+		<div class="user">
+			<div class="user-test text">Admin</div>
+			<!-- <i class="dropdown icon"></i>
+			<div class="menu">
+				<div class="item">登出</div>
+			</div> -->
+		</div>
+	</div>
+	<div class="container">
+		<div class="finance_menu">
+			<ul class="ui accordion vertical menu">
+				<li class="item">
+					<div class="active title">
+						<span>公司管理</span>
+						<i class="dropdown icon"></i>
+					</div>
+					<div class="active content">
+						<p><a href="#">用户信息管理</a></p>
+						<p><a href="#">公司信息管理</a></p>
+					</div>
+				</li>
+				<li class="item">
+					<div class="title">
+						<span>信息汇总</span>
+						<i class="dropdown icon"></i>
+					</div>
+					<div class="content">
+						<p><a href="#">表单查看</a></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<div class="content_container">
+				<table id="userInfo"></table>
+			</div>
+			<div class="footer">
+				<span>©2018 财务管理系统 By Martin</span>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../../js/finance/index.js"></script>
+<script type="text/javascript" src="../../js/user/user_datatable.js"></script>
+</body>
+</html>

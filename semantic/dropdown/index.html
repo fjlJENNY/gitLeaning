@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Template</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
+	<script type="text/javascript" src="../semantic/dist/semantic.js"></script>
+</head>
+<body>
+<div class="ui dropdown">
+	<div class="text">File</div>
+	<i class="dropdown icon"></i>
+	<div class="menu">
+		<div class="item">
+			<span class="description">Ctrl+0</span>
+			open...
+		</div>
+		<div class="item">
+			<span class="description">Ctrl + s</span>
+			Save as...
+		</div>
+		<div class="item">Make a copy</div>
+	</div>
+</div>
+<div class="ui dropdown">
+	<input type="hidden" name="gender">
+	<div class="default text">Gender</div>
+	<i class="dropdown icon"></i>
+	<div class="menu">
+		<div class="item" data-value="male">Male</div>
+		<div class="item" data-value="fmale">Fmale</div>
+	</div>
+</div>
+<div class="ui dropdown">
+	<input type="hidden" name="gender">
+	<i class="dropdown icon"></i>
+	<div class="default text">Gender</div>
+	<div class="menu">
+		<div class="item" data-value="male" data-text="Male">
+			<i class="male icon"></i>
+			Male
+		</div>
+		<div class="item" data-value="falme" data-text="falme">
+			<i class="female icon"></i>
+			Fmale
+		</div>
+	</div>
+</div>
+<select class="ui dropdown">
+  	<!-- <option value="">Gender</option> -->
+  	<option value="male">Male</option>
+  	<option value="female">Female</option>
+</select>
+<script type="text/javascript">
+	$(".ui.dropdown").dropdown({});
+	// setTimeout(function(){
+	// 	console.log($(".ui.dropdown").eq(2).dropdown('get value'));
+	// },10000);
+	$(".ui.dropdown").dropdown({
+		values:[{
+			name:"male",
+			value:"male"
+		},{
+			name:"Feale",
+			value:"female"
+		},{
+			name:"DEMO",
+			value:"DEMO",
+		}],
+		placeholder:'this is text'
+	});
+</script>
+</body>
+</html>

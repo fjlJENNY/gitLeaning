@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>specifying select </title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
+	<script type="text/javascript" src="../semantic/dist/semantic.js"></script>
+</head>
+<body>
+<div class="ui selection dropdown">
+	<input type="hidden" name="statas" >
+	<i class="dropdown icon"></i>
+	<div class="default text">Status</div>
+	<div class="menu">
+		<div class="item" data-value="AL">Alabama</div>
+	    <div class="item" data-value="AK">Alaska</div>
+	    <div class="item" data-value="AZ">Arizona</div>
+	    <div class="item" data-value="AR">Arkansas</div>
+	    <div class="item" data-value="CA">California</div>
+	    <!-- Saving your scroll sanity !-->
+	    <div class="item" data-value="OH">Ohio</div>
+	    <div class="item" data-value="OK">Oklahoma</div>
+	    <div class="item" data-value="OR">Oregon</div>
+	    <div class="item" data-value="PA">Pennsylvania</div>
+	    <div class="item" data-value="RI">Rhode Island</div>
+	    <div class="item" data-value="SC">South Carolina</div>
+	    <div class="item" data-value="SD">South Dakota</div>
+	    <div class="item" data-value="TN">Tennessee</div>
+	    <div class="item" data-value="TX">Texas</div>
+	    <div class="item" data-value="UT">Utah</div>
+	    <div class="item" data-value="VT">Vermont</div>
+	    <div class="item" data-value="VA">Virginia</div>
+	    <div class="item" data-value="WA">Washington</div>
+	    <div class="item" data-value="WV">West Virginia</div>
+	    <div class="item" data-value="WI">Wisconsin</div>
+	    <div class="item" data-value="WY">Wyoming</div>
+	</div>
+</div>
+<script type="text/javascript">
+	setTimeout(function(){
+		console.log($(".ui.dropdown").dropdown('get value'));
+	},5000);
+	$(".ui.dropdown").dropdown({
+		onChange:function(value, text, $choice){
+			
+		}
+	})
+</script>
+</body>
+</html>

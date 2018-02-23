@@ -1,0 +1,156 @@
+
+
+/*主界面*/
+html{
+	font-size:20px;
+}
+#finance_wrapper {
+	width: 100%;
+	height: 100%;
+	font-size: 1rem;
+}
+
+#finance_wrapper .header{
+	width: 100%;
+	height: 2rem;
+	line-height: 2rem;
+	font-size:0.8rem;
+}
+
+#finance_wrapper .finance_menu{
+	background:	#00FA9A;
+	width: 10rem;
+}
+
+#finance_wrapper .container{
+	display: flex;
+	height: calc(100% - 2rem)
+}
+
+
+#finance_wrapper .container .content{
+	background:rgb(245, 245, 245);
+	flex-grow: 1;
+}
+#finance_wrapper .container .content_container{
+	min-height: calc(100% - 40px);
+}
+#finance_wrapper .container .footer{
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+
+
+/*头部导航栏*/
+#finance_wrapper .header{
+	background : rgba( 30, 144, 255, 0.9);
+}
+
+#finance_wrapper .header .logo-wrap{
+	float: left;
+	width: calc(8rem - 44px);
+	height: 100%;
+}
+#finance_wrapper .header .menu-area{
+	width: 44px;
+	height: 100%;
+	float: left;
+}
+#finance_wrapper .header .menu-area a{
+	color: #266298;
+	padding: 0 11px;
+	border-right: 1px solid #335c9e;
+    border-left: 1px solid #335c9e;
+    height: 100%;
+    display: inline-block;
+    background: #335c9e;
+}
+#finance_wrapper .header .menu-area .ico-menu{
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/common.png);
+    background-position: -196px -412px;
+    display: inline-block;
+    vertical-align: text-top;
+    background-repeat: no-repeat;
+}
+
+#finance_wrapper .header .msg{
+	float: right;
+	width: 44px;
+	height: 100%;
+}
+#finance_wrapper .header .msg a .ico-bell{
+	background-position: -459px -354px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/tfl-lego.sprite+1510207401346.png);
+    display: inline-block;
+}
+
+#finance_wrapper .header .user{
+	float: right;
+	height: 100%;
+	min-width: 44px;
+	margin-right: 2rem;
+}
+
+#finance_wrapper .header .user .dropdown.icon{
+
+}
+
+
+
+#finance_wrapper .header:after{
+	clear:both;content:'';display:block;width:0;height:0;visibility:hidden;
+}
+
+
+
+
+
+/*menu*/
+li{
+	list-style: none;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	padding:0px;
+	margin:0px;
+}
+
+ul{
+	margin:0px;
+	padding:0px;
+}
+
+
+.finance_menu .vertical.menu{
+	width: 10rem;
+	font-size: 0.8rem;
+	box-shadow: 0px 0px 0px 0px;
+	border-radius: 0px;
+	border:0px;
+	padding: 0px!important;
+}
+
+.finance_menu .item .dropdown.icon{
+	margin:0px 0px 0px 2rem!important;
+}
+
+.finance_menu .item  .content{
+	margin:0px;
+	padding:0px!important;
+}
+.finance_menu .item{
+	padding-left:0px!important;
+	padding-right: 0px!important;
+	width: 100%;
+}
+.finance_menu .item  .content p{
+	margin:0px ;
+	text-indent: 1.5rem;
+	/*margin:1rem 0px!important;*/
+}

@@ -1,0 +1,25 @@
+$("#userInfo").datagrid({
+	columns:[
+		[
+			{field:"SN",title:"序号",width:40,formatter:function(value,row,index){
+				return index;
+			}},
+			{
+				field:"userName",title:"用户名",width:80
+			},
+			{
+				field:"Name",title:"姓名",width:120,
+			},
+			{
+				field:"Phone",title:"电话",width:130,
+			},
+			{
+				field:"Age",title:"年龄",width:40,
+			},
+			{
+				field:"Gender",title:"性别",width:40,
+			}
+		]
+	],
+	data:window.test_data.user
+});
