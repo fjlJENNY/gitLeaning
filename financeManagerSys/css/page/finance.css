@@ -18,7 +18,7 @@ html{
 }
 
 #finance_wrapper .finance_menu{
-	background:	#00FA9A;
+	background:		#DCDCDC;
 	width: 10rem;
 }
 
@@ -149,8 +149,65 @@ ul{
 	padding-right: 0px!important;
 	width: 100%;
 }
-.finance_menu .item  .content p{
-	margin:0px ;
-	text-indent: 1.5rem;
-	/*margin:1rem 0px!important;*/
+
+.finance_menu .item{
+	position: relative;
 }
+
+.finance_menu .item .title{
+
+}
+
+.finance_menu .item .title span{
+	display: inline-block;
+    width: 100%;
+    height: 2rem;
+	line-height: 2rem;
+	
+}
+.finance_menu .item .title span a{
+	width: 100%;
+	display: inline-block;
+	color:rgba(0,0,0,1);
+	text-indent: 1em;
+}
+
+
+.finance_menu .item .title span:before{
+	border: 5px solid #000;
+    content: "";
+    border-color: transparent transparent transparent #000;
+    height: 0;
+    position: absolute;
+    right: 1rem;
+    top: 0.7rem;
+    width: 0px;
+}
+.finance_menu .item .title.open span:before{
+	border-color: #000 transparent transparent;
+	right: 1.1rem;
+}
+/*.finance_menu .item>:target  span:before{
+    border-color: #fff transparent transparent;
+}*/
+
+.finance_menu .item .content{
+	/*height: 0px;
+	overflow:hidden;
+	transition:height 0.5s ease-in;*/
+	display: none;
+}
+.finance_menu .item .content li a{
+	color:black;
+	display: inline-block;
+	width: 100%;
+	text-indent: 2em;
+}
+.finance_menu .item .content li {
+	height: 1.8rem;
+	line-height: 1.8rem;
+
+}
+/*.finance_menu .item .open+.content{
+	display: block;
+}*/
