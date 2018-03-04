@@ -8,6 +8,7 @@ window.test_data.login = {
 		"password":"123456"
 	}],
 	"root":[{
-		"admin":"admin"
+		"account":"admin",
+		"password":"admin"
 	}]
 }
