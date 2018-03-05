@@ -211,3 +211,10 @@ ul{
 /*.finance_menu .item .open+.content{
 	display: block;
 }*/
+
+
+
+.common_table{
+	width: 800px;
+	height: 400px;
+}
