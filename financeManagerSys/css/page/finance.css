@@ -2,7 +2,7 @@
 
 /*主界面*/
 html{
-	font-size:20px;
+	font-size:20px!important;
 }
 #finance_wrapper {
 	width: 100%;
@@ -18,7 +18,7 @@ html{
 }
 
 #finance_wrapper .finance_menu{
-	background:		#DCDCDC;
+	background:	#DCDCDC;
 	width: 10rem;
 }
 

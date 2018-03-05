@@ -16,5 +16,8 @@
   "license": "ISC",
   "devDependencies": {
     "text": "github:requirejs/text"
+  },
+  "dependencies": {
+    "require-css": "^0.1.10"
   }
 }
