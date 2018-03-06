@@ -8,6 +8,7 @@ requirejs.config({
     paths: {
         common:"common",
         text:"../node_modules/text/text",
+        json:"../node_modules/requirejs-plugins/src/json",
         finance:"finance",
        	UUID:"../lib/uuid",
        	semantic:"",

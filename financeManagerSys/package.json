@@ -18,6 +18,7 @@
     "text": "github:requirejs/text"
   },
   "dependencies": {
-    "require-css": "^0.1.10"
+    "require-css": "^0.1.10",
+    "requirejs-plugins": "^1.0.2"
   }
 }
