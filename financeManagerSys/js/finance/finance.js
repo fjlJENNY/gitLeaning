@@ -4,6 +4,7 @@ define(function(require){
 	var uuid = UUID.generate();
 
 	var Accordion = require("../accordion/accordion");
+
 	var accordion = new Accordion({
 		$parent:$("#finance_wrapper").find(".finance_menu")
 	});

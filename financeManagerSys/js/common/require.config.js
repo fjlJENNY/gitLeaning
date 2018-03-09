@@ -14,7 +14,9 @@ requirejs.config({
        	semantic:"",
        	jQuery:"https://cdn.bootcss.com/jquery/3.3.1/jquery.min",
        	semantic:"https://cdn.bootcss.com/semantic-ui/2.2.14/semantic.min",
-       	"jQuery.easyui":"../lib/jquery.easyui.min"
+       	"jQuery.easyui":"../lib/jquery.easyui.min",
+        view:"../view",
+        rolemanager:"./base/rolemanager"
     },
     shim:{
     	"UUID":{

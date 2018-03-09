@@ -53,5 +53,26 @@ define(function(){
 		}
 		return false;
 	}
+	// buttons 可能是 obj || array
+	rolemanage.hasButtonRole = function(buttons){
+		if(buttons instanceof Array){
+			var arr = [];
+			for(var i = 0 ;i<buttons.length;i++){
+				if(buttons[i].groupcode && buttons[i].rolecode && this.hasRole(buttons[i].groupcode,buttons[i].rolecode)){
+					arr.push(buttons[i]);
+				}
+			}
+			return arr;
+		}else if(buttons instanceof Object){
+			var obj = {};
+			if(buttons["groupcode"] && buttons["rolecode"] && this.hasRole(buttons["groupcode"],buttons["rolecode"])){
+				obj = buttons;
+			}
+			return obj;
+		}else{
+			return null;
+		}
+	}
+
 	return rolemanage;
 });

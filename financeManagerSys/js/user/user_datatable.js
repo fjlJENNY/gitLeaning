@@ -1,5 +1,24 @@
 define(function(require){
+	var role = require("rolemanager");
+	// 按钮事件注册
+	var toolbar = [{
+			iconCls:"icon-edit",
+			plain:true,
+			text:"编辑",
+			handler:function(){
+				alert("edit");
+			}
+		},{
+			iconCls:"icon-add",
+			plain:true,
+			text:"新增",
+			handler:function(){
+				alert("add");
+			}
+		}];
+	var afterRoleToolbar = role.hasButtonRole(toolbar);
 	$("#userInfo").datagrid({
+		title:"用户列表",
 		columns:[
 			[
 				{field:"SN",title:"序号",width:40,formatter:function(value,row,index){
@@ -22,6 +41,7 @@ define(function(require){
 				}
 			]
 		],
-		data:window.test_data.user
+		data:window.test_data.user,
+		toolbar:afterRoleToolbar.length ? afterRoleToolbar : null
 	});
 })
