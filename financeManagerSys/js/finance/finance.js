@@ -1,9 +1,13 @@
 define(function(require){
 	var UUID = require("UUID");
 	require("user/user_datatable");
+	var registNav = require("base/registerNavManager");
 	var uuid = UUID.generate();
 
 	var Accordion = require("../accordion/accordion");
+
+	var v1 = UUID.genV1();
+	console.log(v1);
 
 	var accordion = new Accordion({
 		$parent:$("#finance_wrapper").find(".finance_menu")
@@ -40,8 +44,14 @@ define(function(require){
 		event = event||window.event;
 		var target = event.target;
 		console.log(target);
+		var current = target.getAttribute("href").substr(1);
+		var func = registNav.GetNav(current);
+		if(typeof func === "function"){
+			func({
+				"ContentParent":$(".content_container")
+			})
+		}
 		event.stopPropagation();
-		
 	});
 
 })

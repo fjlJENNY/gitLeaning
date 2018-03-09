@@ -58,7 +58,7 @@ define(function(){
 		if(buttons instanceof Array){
 			var arr = [];
 			for(var i = 0 ;i<buttons.length;i++){
-				if(buttons[i].groupcode && buttons[i].rolecode && this.hasRole(buttons[i].groupcode,buttons[i].rolecode)){
+				if(buttons[i].defaultShow || buttons[i].groupcode && buttons[i].rolecode && this.hasRole(buttons[i].groupcode,buttons[i].rolecode)){
 					arr.push(buttons[i]);
 				}
 			}
