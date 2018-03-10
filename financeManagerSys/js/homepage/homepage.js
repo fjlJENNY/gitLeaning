@@ -1,13 +1,10 @@
 define(function(require){
 	var UUID = require("UUID");
-	require("user/user_datatable");
+
 	var registNav = require("base/registerNavManager");
 	var uuid = UUID.generate();
 
 	var Accordion = require("../accordion/accordion");
-
-	var v1 = UUID.genV1();
-	console.log(v1);
 
 	var accordion = new Accordion({
 		$parent:$("#finance_wrapper").find(".finance_menu")

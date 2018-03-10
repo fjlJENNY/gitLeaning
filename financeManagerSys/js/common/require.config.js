@@ -9,7 +9,6 @@ requirejs.config({
         common:"common",
         text:"../node_modules/text/text",
         json:"../node_modules/requirejs-plugins/src/json",
-        finance:"finance",
        	UUID:"../lib/uuid",
        	semantic:"",
        	jQuery:"https://cdn.bootcss.com/jquery/3.3.1/jquery.min",
@@ -41,5 +40,5 @@ requirejs.config({
 requirejs(["css!../css/page/app.css","css!../css/page/finance.css",
 	"jQuery","semantic","jQuery.easyui",
 	],function(){
-		requirejs(["finance/finance"]);
+		requirejs(["homepage/homepage"]);
 });

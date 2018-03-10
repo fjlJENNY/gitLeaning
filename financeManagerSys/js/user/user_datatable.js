@@ -29,7 +29,7 @@ define(function(require){
 			columns:[
 				[
 					{field:"SN",title:"序号",width:40,formatter:function(value,row,index){
-						return index;
+						return ++index;
 					}},
 					{
 						field:"userName",title:"用户名",width:80

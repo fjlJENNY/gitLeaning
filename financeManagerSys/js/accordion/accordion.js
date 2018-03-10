@@ -1,7 +1,8 @@
 define(function(require){
 	var navmanager = require("../base/navmanager");
 	console.log(navmanager);
-
+	var requireRegistNav = require("accordion/requireRegistNav");
+	new requireRegistNav(navmanager);
 	var accordion = function(setting){
 		this.setting = setting;
 		this.initAccordion();
