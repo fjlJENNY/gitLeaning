@@ -1,6 +1,6 @@
 define(function(require){
 	// 加载对应的 register Nav 
-
+	require("homepage/homepageNav")
 	function _loadNav(navs){
 		for(var i = 0 ;i <navs.length;i++){
 			var item = navs[i].Lists;
@@ -20,6 +20,9 @@ define(function(require){
 				break;
 			case "FinanceManager":
 				require("finance/financeAnalysis");
+				break;
+			case "DepartmentManager":
+				require("approval/department_approval")
 				break;
 			default:
 				break;

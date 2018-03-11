@@ -17,7 +17,9 @@ define(function(require){
 			Id:"UserManager",
 			Name:"公司人员",
 			groupcode:"comany",
-			Show:true
+			Show:function(){
+				return true;
+			}
 		}]
 	},{
 		Id:"FinanceManager",
@@ -34,6 +36,16 @@ define(function(require){
 			Id:"FinanceAnalysis",
 			Name:"财务分析",
 			groupcode:"finance",
+			Show:true
+		}]
+	},{
+		Id:"DepartmentManager",
+		Name:"部门管理",
+		Icon:"",
+		Lists:[{
+			Id:"DepartmentApproval",
+			Name:"部门管理",
+			groupcode:"depart",
 			Show:true
 		}]
 	}

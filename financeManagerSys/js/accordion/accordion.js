@@ -10,7 +10,9 @@ define(function(require){
 
 	accordion.prototype.initAccordion = function(){
 		var $parent = this.setting.$parent;
+		console.time("homePage");
 		$parent.empty().append(this.initDom());
+		console.timeEnd("homePage");
 	}
 
 	accordion.prototype.initDom = function(){
@@ -19,6 +21,9 @@ define(function(require){
 
 	accordion.prototype.initMenuDom = function(menu){
 		var uls = "";
+		uls += '<li class="item" id="HomePage">'+
+			'<div class="title"><span><a href="javascript:void(0);">主页</a></span></div>'+
+		'</li>'
 		for(var i = 0;i<menu.length;i++){
 			uls+=
 			'<li class="item" id="'+menu[i].Id+'">'+

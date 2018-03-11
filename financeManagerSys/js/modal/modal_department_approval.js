@@ -1,15 +1,15 @@
 /*问题：使用 validedatebox 声明的 valid 为什么不上色（和组件的）  配置err:err*/
 define(function(require){
 	var registModal = require("base/registerModalManager");
-	var financeAnalysis = require("text!view/finance/financeAnalysis.html");
+	var departmentApproval = require("text!view/department/departmentApproval.html");
 	var Event = require("common/extend");
-	function financeAnalysisModal(setting){
+	function departmentApprovalModal(setting){
 		this.setting = setting;
-		$("#finance_wrapper").append($(financeAnalysis).find(".financeAnalysis_dialog"));
-		this.content = $("#finance_wrapper .financeAnalysis_dialog");
+		$("#finance_wrapper").append($(departmentApproval).find(".departmentApproval_dialog"));
+		this.content = $("#finance_wrapper .departmentApproval_dialog");
 		this.registDom();
 	}
-	financeAnalysisModal.prototype.modalOpen = function(){
+	departmentApprovalModal.prototype.modalOpen = function(){
 		if(this.content.length){
 			this.resetHandle();// 重置
 			if(this.actionType == "edit"){
@@ -19,7 +19,7 @@ define(function(require){
 			}
 		}
 	}
-	financeAnalysisModal.prototype.registDom = function(){
+	departmentApprovalModal.prototype.registDom = function(){
 		var self = this;
 		this.control = this.control || {};
 		this.control.datagrid = $(this.setting.datagridSelector);
@@ -36,8 +36,11 @@ define(function(require){
 		this.control.exesType = this.content.find('input[name="exesType"]');
 		this.control.revenueField = this.control.revenue.closest(".field");
 		this.control.expensesField = this.control.expenses.closest(".field");
+
+
+
 		this.content.dialog({
-			buttons:".financeAnalysis_dialog .buttons"
+			buttons:".departmentApproval_dialog .buttons"
 		});
 		this.content.dialog({
 			onOpen:this.modalOpen.bind(this)
@@ -49,6 +52,9 @@ define(function(require){
 		this.control.resetValue.linkbutton({
 			onClick:this.resetHandle.bind(this)
 		});
+
+
+
 
 		this.control.dealer.textbox({
 		});
@@ -123,7 +129,7 @@ define(function(require){
 		});
 	}
 	// Ok handle
-	financeAnalysisModal.prototype.OkHandle = function(){
+	departmentApprovalModal.prototype.OkHandle = function(){
 		 //console.log($(".financeAnalysis.modal.form").form("getData",true));
 		// //console.log(this.control.form.find(".field").form("getData",true));
 		// this.control.form.map(function(item){
@@ -161,13 +167,13 @@ define(function(require){
 		}
 	}
 	// reset Handle
-	financeAnalysisModal.prototype.resetHandle = function(){
+	departmentApprovalModal.prototype.resetHandle = function(){
 		this.control.form.form("resetForm");
 		this.control.type.combobox("select","收入");
 	}
 
 
-	financeAnalysisModal.prototype.formatData = function(formData){
+	departmentApprovalModal.prototype.formatData = function(formData){
 		return Event({
 			"operTime":"",
 			"type":"",
@@ -179,10 +185,10 @@ define(function(require){
 		},formData);
 	}
 
-	financeAnalysisModal.prototype.hideDialog = function(){
+	departmentApprovalModal.prototype.hideDialog = function(){
 		this.content.dialog("close");
 	}
 
 
-	registModal.RegisterModal("FinanceAnalysis",financeAnalysisModal);
+	registModal.RegisterModal("departmentApprovalModal",departmentApprovalModal);
 })

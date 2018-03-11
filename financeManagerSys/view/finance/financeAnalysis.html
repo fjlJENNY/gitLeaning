@@ -1,7 +1,23 @@
 <div class="financetable">
 	<div id="financeAnalysis"></div>
-	<div class="financeAnalysis_dialog dialog" style="display: none;">
+	<div class="financeAnalysis_dialog dialog" >
 		<div class="financeAnalysis modal form">
+			<div class="field">
+				<label for="operTime">操作时间</label>
+				<input type="text"  name="operTime">
+			</div>
+			<div class="field">
+				<label for="type">类型</label>
+				<input type="text" name="type">
+			</div>
+			<div class="field">
+				<label for="revenue">收入</label>
+				<input type="text" name="revenue">
+			</div>
+			<div class="field">
+				<label for="expenses">支出</label>
+				<input type="text" name="expenses">
+			</div>
 			<div class="field">
 				<label for="dealer">交易方</label>
 				<input type="text" name="dealer">
@@ -10,6 +26,14 @@
 				<label for="financeDetail">明细</label>
 				<input type="text" name="financeDetail">
 			</div>
+			<div class="field">
+				<label for="exesType">费用类型</label>
+				<input type="text" name="exesType">
+			</div>
+		</div>
+		<div class="financeAnalysis modal buttons">
+			<button class="Ok" name="Ok">确定</button>
+			<button class="resetValue" name="resetValue">重置</button>
 		</div>
 	</div>
 </div>

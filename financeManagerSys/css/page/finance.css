@@ -1,6 +1,11 @@
 
 
 /*主界面*/
+*{
+	margin:0px;
+	padding:0px;
+}
+
 html{
 	font-size:20px!important;
 }
@@ -17,24 +22,41 @@ html{
 	font-size:0.8rem;
 }
 
-#finance_wrapper .finance_menu{
+#finance_wrapper .container .finance_menu{
 	background:	#DCDCDC;
 	width: 10rem;
+	/*float:left;*/
+	height: 100%;
+	flex-basis: 10rem;
 }
 
 #finance_wrapper .container{
+	height: calc(100% - 2rem);
 	display: flex;
-	height: calc(100% - 2rem)
 }
 
+/*#finance_wrapper .container:after {
+    clear: both;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}*/
 
-#finance_wrapper .container .content{
+
+#finance_wrapper .container>.content{
 	background:rgb(245, 245, 245);
+	/*width: calc(100% - 10rem);*/
+	height: 100%;
+	/*float:left;*/
 	flex-grow: 1;
 }
 #finance_wrapper .container .content_container{
-	min-height: calc(100% - 40px);
+	min-height: calc(100% - 2rem);
 }
+
+
 #finance_wrapper .container .footer{
 	height: 2rem;
 	line-height: 2rem;
@@ -46,12 +68,12 @@ html{
 
 /*头部导航栏*/
 #finance_wrapper .header{
-	background : rgba( 30, 144, 255, 0.9);
+	background : #7BC0F4;
 }
 
 #finance_wrapper .header .logo-wrap{
 	float: left;
-	width: calc(8rem - 44px);
+	width: calc(10rem - 42px);
 	height: 100%;
 }
 #finance_wrapper .header .menu-area{
@@ -62,11 +84,11 @@ html{
 #finance_wrapper .header .menu-area a{
 	color: #266298;
 	padding: 0 11px;
-	border-right: 1px solid #335c9e;
-    border-left: 1px solid #335c9e;
+	border-right: 1px solid #3a8edb;
+    border-left: 1px solid #3a8edb;
     height: 100%;
     display: inline-block;
-    background: #335c9e;
+    background: #3a8edb;
 }
 #finance_wrapper .header .menu-area .ico-menu{
     width: 20px;
@@ -186,6 +208,12 @@ ul{
 .finance_menu .item .title.open span:before{
 	border-color: #000 transparent transparent;
 	right: 1.1rem;
+}
+#HomePage .title span:before{
+	border-color: transparent ;
+}
+#HomePage .title.open span:before{
+	border-color: transparent ;
 }
 /*.finance_menu .item>:target  span:before{
     border-color: #fff transparent transparent;

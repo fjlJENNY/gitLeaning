@@ -1,7 +1,7 @@
 #finance_wrapper {
 	position: relative;
 }
-#finance_wrapper .panel{
+/*#finance_wrapper .panel{
     width: 100%;
     height: 100%;
     background: rgba(255,255,255,0.5);
@@ -16,4 +16,55 @@
     top: 300px;
     width: 1903px;
     z-index: 100;
+}*/
+
+@media only screen and (max-width: 767px) {
+    .form.modal {
+        width:45%;
+        margin: 0
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .form.modal {
+        width:30%;
+        margin: 0
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .form.modal {
+        width:340px;
+        margin: 0
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .form.modal {
+        width:360px;
+        margin: 0
+    }
+}
+
+
+
+
+.dialog-button {
+    border-style: none!important;
+    background:#fff!important;
+    top: 0px!important;
+}
+
+.l-btn-focus:{
+    outline: none!important;
+}
+.modal.form .field{
+    margin-top:1.2em;
+    margin-bottom:1.2em;
+}
+.modal.form .field label{
+    width: 33%;
+    text-align: right;
+    padding-right: 5px;
+    display: inline-block;
 }

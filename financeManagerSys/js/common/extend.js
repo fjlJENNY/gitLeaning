@@ -81,4 +81,5 @@ define(function(require){
         }
         return toStr.call(arr) === '[object Array]';
     };
+    return Extend;
 });
