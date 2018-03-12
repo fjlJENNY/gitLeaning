@@ -59,7 +59,7 @@ define(function(require){
 		});
 		this.control.email.textbox({
 			required:true,
-			validType:email
+			validType:"email"
 		});
 		this.control.phone.textbox({
 			required:true,
