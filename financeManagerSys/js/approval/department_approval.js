@@ -6,12 +6,12 @@ define(function(require){
 
 	require("modal/modal_department_approval");
 	var registModal = require("base/registerModalManager");
-	var departmentApprovalModal = registModal.GetModal("departmentApprovalModal");
+	var departmentApprovalModal = registModal.GetModal("department_Modal");
 	
 
 	// UserManager  是 标注的节点
 	registNav.RegisterNav("DepartmentApproval",function(config){
-		$(".content_container").empty().append($(departmentApprovalModal).find("#departmentApproval_datagrid"));
+		$(".content_container").empty().append($(departmentApproval).find("#departmentApproval_datagrid"));
 		
 		var f_modal = new departmentApprovalModal({
 			datagridSelector:"#departmentApproval_datagrid"
@@ -62,12 +62,12 @@ define(function(require){
 			}];
 		var afterRoleToolbar = role.hasButtonRole(toolbar);
 		$("#departmentApproval_datagrid").datagrid({
-			title:"财务分析",
+			title:"部门",
 			columns:[
 				[
 					
 					{
-						field:"departmentId",title:"部门编号",width:120
+						field:"departmentId",title:"部门编号",width:80
 					},
 					{
 						field:"password",title:"密码",width:60,

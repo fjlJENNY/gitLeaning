@@ -27,15 +27,13 @@ define(function(require){
 		this.control.Ok = this.content.find('button[name="Ok"]');
 		this.control.resetValue = this.content.find('button[name="resetValue"]');
 
-		this.control.dealer = this.content.find('input[name="dealer"]');
-		this.control.financeDetail = this.content.find('input[name="financeDetail"]');
-		this.control.operTime = this.content.find('input[name="operTime"]');
-		this.control.type = this.content.find('input[name="type"]');
-		this.control.expenses = this.content.find('input[name="expenses"]');
-		this.control.revenue = this.content.find('input[name="revenue"]');
-		this.control.exesType = this.content.find('input[name="exesType"]');
-		this.control.revenueField = this.control.revenue.closest(".field");
-		this.control.expensesField = this.control.expenses.closest(".field");
+		this.control.phone = this.content.find('input[name="phone"]');
+		this.control.email = this.content.find('input[name="email"]');
+		this.control.name = this.content.find('input[name="name"]');
+		this.control.remark = this.content.find('input[name="remark"]');
+		this.control.departmentId = this.content.find('input[name="departmentId"]');
+		this.control.password = this.content.find('input[name="password"]');
+		this.control.group = this.content.find('input[name="group"]');
 
 
 
@@ -53,80 +51,43 @@ define(function(require){
 			onClick:this.resetHandle.bind(this)
 		});
 
+		this.control.name.textbox({});
+		this.control.departmentId.textbox({});
 
-
-
-		this.control.dealer.textbox({
+		this.control.password.passwordbox({
+			showEye:false
 		});
-		// expenses : 支出
-		this.control.expenses.numberbox({
-			precision:2,
-			min:0,
-			prefix:"¥",
+		this.control.email.textbox({
 			required:true,
+			validType:email
 		});
-		// revenue : 收入
-		this.control.revenue.numberbox({
-			precision:2,
-			min:0,
-			prefix:"¥",
+		this.control.phone.textbox({
 			required:true,
-		});
-		// 
-		this.control.type.combobox({
-			valueField:"Id",
-			textField:"value",
-			data:[{
-				"Id":"支出",
-				"value":"支出"
-			},{
-				"Id":"收入",
-				"value":"收入",
-				"selected":true // 为什么不使用，重置会删除
-			},
-			],
-			require:true,
-			onChange:function(newValue,oldValue){
-				if(newValue == "收入"){
-					self.control.expensesField.hide();
-					self.control.revenueField.show();
-					self.control.expenses.numberbox("disable").numberbox("reset"); // 避免验证
-					self.control.revenue.numberbox("enable");
-				}else if(newValue == "支出"){
-					self.control.revenueField.hide();
-					self.control.expensesField.show();
-					self.control.revenue.numberbox("disable").numberbox("reset");
-					self.control.expenses.numberbox("enable");
-				}
-			},
-			labelAlign:"right",
-		});
+		})
 		
-		this.control.exesType.combobox({
+		
+		this.control.group.combobox({
 			valueField:"Id",
 			textField:"value",
 			data:[{
-				"Id":"公司盈利费用",
-				"value":"公司盈利费用"
+				"Id":"第一分组",
+				"value":"第一分组"
 			},{
-				"Id":"管理费用",
-				"value":"管理费用",
+				"Id":"第二分组",
+				"value":"第二分组",
 			},
 			],
-			require:true,
+			required:true,
 			onChange:function(newValue,oldValue){
 				console.log(newValue,oldValue);
 			}
 		});
 		
-		this.control.financeDetail.textbox({
+		this.control.remark.textbox({
 			multiline:true,
 			height:"100"
 		});
-		this.control.operTime.datebox({
-			value:new Date(),
-			readonly:true
-		});
+		
 	}
 	// Ok handle
 	departmentApprovalModal.prototype.OkHandle = function(){
@@ -169,19 +130,19 @@ define(function(require){
 	// reset Handle
 	departmentApprovalModal.prototype.resetHandle = function(){
 		this.control.form.form("resetForm");
-		this.control.type.combobox("select","收入");
+		this.control.group.combobox("select","第一分组");
 	}
 
 
 	departmentApprovalModal.prototype.formatData = function(formData){
 		return Event({
-			"operTime":"",
-			"type":"",
-			"revenue":"",
-			"dealer":"",
-			"financeDetail":"",
-			"exesType":"",
-			"expenses":""
+			"departmentId":"",
+			"password":"",
+			"group":"",
+			"name":"",
+			"phone":"",
+			"email":"",
+			"remark":""
 		},formData);
 	}
 
@@ -190,5 +151,5 @@ define(function(require){
 	}
 
 
-	registModal.RegisterModal("departmentApprovalModal",departmentApprovalModal);
+	registModal.RegisterModal("department_Modal",departmentApprovalModal);
 })
