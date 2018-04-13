@@ -1,0 +1,106 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>semantic shape</title> 
+    <!-- <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script> 
+    <link rel="stylesheet" href="./sematic/semantic.css">  
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <script type="text/javascript" src="./sematic/semantic.js"></script>
+    <script type="text/javascript" src="./sematic/init.js"></script> -->
+    <style type="text/css">
+        .loading{
+            position: relative;
+            margin-bottom:80px;
+        }
+        .loading:before{
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            margin: -.64285714em 0 0 -.64285714em;
+            width: 1.28571429em;
+            height: 1.28571429em;
+            border-radius: 500rem;
+            //border: .2em solid rgba(169, 19, 209, 0.89);
+            border-width: 0.2em;
+            border-style: solid;
+            border-top-color:rgba(0, 144, 178, 0.89);
+            border-bottom-color:rgba(0, 147, 59, 0.89);
+            border-left-color:rgba(0, 147, 59,0.89);
+            border-right-color: rgba(0, 144, 178,0.89);
+        }
+        .loading:after{
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            margin: -.64285714em 0 0 -.64285714em;
+            width: 1.28571429em;
+            height: 1.28571429em;
+            -webkit-animation: button-spin .6s linear;
+            animation: button-spin .6s linear;
+            /* -webkit-animation-iteration-count: infinite; */
+            animation-iteration-count: infinite; 
+            border-radius: 500rem; 
+            /*border-color: linear-gradient(to left right,#fff 50% ,transparent 100%) transparent transparent;*/
+            
+            //border-image:linear-gradient(to right, transparent, #000 50% , transparent);
+            border-top-color:rgba(255,255,255,0.94);
+            border-bottom-color:transparent;
+            border-left-color:transparent;
+            border-right-color:transparent;
+            border-style: solid;
+            border-width: .2em;
+            -webkit-box-shadow: 0 0 0 1px transparent;
+            box-shadow: 0 0 0 1px transparent;
+        }
+
+        @-webkit-keyframes button-spin {
+            from {
+                -webkit-transform: rotate(0);
+                transform: rotate(0)
+            }
+
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes button-spin {
+            from {
+                -webkit-transform: rotate(0);
+                transform: rotate(0)
+            }
+
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg)
+            }
+        }
+
+
+         /*#one{width:300px;height:50px;
+            border:10px solid green;
+            -moz-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+            -moz-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+            -moz-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+            -moz-border-right- colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+            -webkit-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+            -webkit-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+            -webkit-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+            -webkit-border-right- colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+        }*/
+        </style>  
+    </style> 
+</head>  
+<body> 
+    <div class="loading">
+        
+    </div>
+
+
+    <div id="one"></div>  
+</body>  
+</html>

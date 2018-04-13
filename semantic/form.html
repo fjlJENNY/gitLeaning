@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Template</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script type="text/javascript" src="semantic/dist/semantic.js"></script>
+</head>
+
+<body>
+    <!-- 测试disabled 可避免 验证 -->
+    <form class="ui form segment">
+        <div class="two fields">
+            <div class="field">
+                <label>Name</label>
+                <input type="text" name="name" x>
+            </div>
+            <div class="field">
+                <label>Gender</label>
+                <div class="ui fluid selection dropdown">
+                    <input type="hidden" name="gender">
+                    <div class="default text">Gender</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item" data-value="1">Male</div>
+                        <div class="item" data-value="0">Female</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="field"> -->
+            <div class="field">
+                <label>是否有前置勘察</label>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="HasPreProspect" value="1" class="hidden">
+                        <label>是</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="HasPreProspect" value="2" class="hidden">
+                        <label>否</label>
+                    </div>
+                </div>
+            </div>
+       <!--  </div> -->
+        <div class="ui primary submit button">Submit</div>
+    </form>
+    <script type="text/javascript">
+    $(".ui.dropdown").dropdown({});
+    $(".ui.dropdown").checkbox({});
+    $(".ui.form").form({
+        onSuccess: function(event, fields) {
+            console.log(event,fields);
+        },
+        onFailure:function(formErrors, fields){
+            console.log(formErrors,fields);
+        }
+    });
+    $(".ui.form").form({
+        fields: {
+          gender: 'empty',
+          name: 'empty'
+        }
+    });
+
+    $(".submit.button").click(function(){
+        //$(".ui.form").form("validate form")
+        console.log($(".ui.form").form("get field"));
+    });
+    </script>
+</body>
+</html>
