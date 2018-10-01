@@ -1,3 +1,19 @@
+
+
+{
+	function* fibs(){
+		let a = 0;
+		let b = 1;
+		while(true){
+			yield a;
+			[a,b] = [b,a+b];
+		}
+	}
+	let [first,second,thrid,fourth,fifth,sixth] = fibs();
+	console.log("结构 generator",first,second,thrid,fourth,fifth,sixth);
+}
+
+
 let [a,b,c] = [1,2,3];
 console.log(a,b,c);
 // [!a] 变量解构 "模式匹配"

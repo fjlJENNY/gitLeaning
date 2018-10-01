@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基础vue</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script src="./dist/vue.js"></script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+<div id="app">
+	
+</div>
+<script type="x-template" id="tpl">
+	<div>
+		<basic-input v-model="username" label="bitch" class="username-input" type="search" placeholder="Enter your username" v-on:re_input="re_input"></basic-input>
+		<p v-text="username"></p>
+	</div>
+</script>
+<script type="x-template" id="componentA">
+	<label>
+		{{label}}
+		<input v-bind="$attrs" v-bind:value="value" v-on:input = "$emit('re_input',$event.target.value,$attrs)"/>
+	</label>
+</script>
+<script type="text/javascript">
+	Vue.component("basic-input",{
+		inheritAttrs:false,
+		template:"#componentA",
+		props:["label","value"],
+	})
+	var vm = new Vue({
+		el:"#app",
+		template:"#tpl",
+		data:{
+			username:""
+		},
+		methods:{
+			re_input:function(data){
+				console.log(arguments);
+				return this.username = data;
+			}
+		}
+	});
+</script>
+</body>
+</html>

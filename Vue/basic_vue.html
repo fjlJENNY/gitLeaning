@@ -16,13 +16,71 @@
 <script type="x-template" id="tpl">
 	<div class='tpl'>
 		<p>This is a tpl from script tag</p>
+		<b-date-input type="text" data-date-picker="activated"></b-date-input>
 	</div>
 </script>
 <script type="text/javascript">
-	var vm = new Vue({
+	// var vm = new Vue({
+	// 	el:"#app",
+	// 	template: "#tpl"
+	// });
+
+
+	var data2 = {a:{b:2}};
+	var vm2 = new Vue({
+		data:data2
+	})
+	console.log(data2.a == vm2.a);
+
+
+	var vm3 = new Vue({
+		data:{
+			a:1
+		}
+	});
+
+	vm3.$set(vm3.$data,"b",2);
+	console.log(vm3);
+
+
+
+	var arr = new Array(999);
+	arr.fill(1);
+	function asyncForEach(array, handler){
+	    var t = setInterval(function () {
+	        if(array.length === 0){
+	            clearInterval(t);
+	        }else {
+	            handler(arr.shift());
+	        }
+	    }, 0);
+	}
+
+	//异步遍历
+	asyncForEach(arr, function (value) {
+	    console.log(value);
+	});
+
+	//同步遍历
+	arr.forEach(function (value, index, arr) {
+	    console.log(value);
+	});
+
+
+
+
+	var componentA = Vue.component("b-date-input",{
+		template:"<input type='date' class='from-control' v-bind:value='$attrs'>"
+	})
+
+
+
+	var vm4 = new Vue({
 		el:"#app",
 		template: "#tpl"
 	});
+
+
 </script>
 </body>
 </html>

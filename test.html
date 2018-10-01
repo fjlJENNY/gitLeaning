@@ -22,6 +22,37 @@
 			width: 400px;
 			height: 400px;
 		}
+
+		.parent{
+			width: 600px;
+			height: 400px;
+			background: yellow;
+			display: flex;
+			flex-direction:column;
+			justify-content:center;
+		}
+		.child{
+			width: 100px;
+			background: red;
+	    	height: 40px;
+    		margin: 0 auto;
+
+		}
+
+
+		.flex-center{
+			display: flex;
+			justify-content: center;
+			width: 400px;
+			height: 200px;
+		}
+		.flex-center >div {
+            padding: 8px;
+            width: 4rem;
+            margin: 0 8px;
+            color: #fff;
+            background: #000;
+        }
 	</style>
 </head>
 <body>
@@ -35,6 +66,31 @@
 	<div class="item">第二项内容</div>
 	<div class="item">第三项内容</div>
 </div>
+
+
+
+<div class="parent">
+	<div class="child">
+		<p>简单不先于复杂</p>
+		<p>简单不先于复杂</p>
+		<p>简单不先于复杂</p>
+		<p>简单不先于复杂</p>
+	</div>
+</div>
+
+
+<div class="flex-center">
+    <div>
+        简单不先于复杂。
+    </div>
+    <div>
+        简单不先于复杂，而是在复杂之后。
+    </div>
+    <div>
+        而是在复杂之后。
+    </div>
+</div>
+
 <script type="text/javascript">
 	var lastIndex = 0;
 	var currentIndex = 0;
@@ -56,5 +112,66 @@
 		console.log(t);
 	}
 </script>
+
+<script type="text/javascript">
+	for(let i = 1 ;i<6;i++){
+		setTimeout(function(){
+			console.log(i)
+		},i*1000)
+	}
+
+	// function TimeSet(time){
+	// 	return function(){
+	// 		console.log(time);
+	// 	}
+	// }
+
+
+</script>
+
+<script type="text/javascript">
+	var arr = [1,"2","1",NaN,undefined,NaN,null,undefined,null,1];
+	var arr1 = [];
+	for(let i = 0;i<arr.length;i++){
+		if(arr1.indexOf(arr[i]) === -1){
+			arr1.push(arr[i]);
+		}
+	}
+	console.log(arr1);
+
+
+
+
+
+</script>
+
+
+<script type="text/javascript">
+	function foo(url){
+		var width = 0;
+		var img = new Image();
+		img.src = url;
+		// img.style.display = "none";
+		// document.body.appendChild(img);
+		// width = imgDom.naturalWidth;
+		var imgDom = document.querySelector("img");
+		img.onload = function(){
+			console.log(img,typeof img);
+			document.body.appendChild(img);
+			var imgDom = document.querySelector("img");
+			window.imgDom = imgDom;
+			console.log(imgDom.naturalWidth);
+		}
+		var def = $.Promise();
+		def.done(function(resolve,reject){
+
+		}).fail(function(resolve,reject){
+
+		})
+		return width;
+	}
+
+	console.log(foo("https://github.com/SpaceK33z.png?size=90"));
+</script>>
 </body>
 </html>

@@ -3,9 +3,9 @@
 var temp = "a";
 
 function a(){
-	console.log(temp);
+	console.log("temp",temp);
 	if(false){
-		var temp = "b";
+		let temp = "b";
 	}
 }
 a();
