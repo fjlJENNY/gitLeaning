@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ctrl + s 事件</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	Ctrl+V：
+		<textarea onkeydown="keyListener(event)"></textarea>
+	<script>
+		function keyListener(event){
+			console.log(event)
+			if(event.ctrlKey && event.keyCode === 86){
+				alert('按下了 ctrl + V')
+			}
+		}
+
+
+		function addEvent(eventTarget,eventType,handler,cancel){
+			eventTarget.addEventListener(eventType,handler,cancel)
+		}
+
+
+
+		
+	</script>
+</body>
+</html>

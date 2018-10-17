@@ -31,7 +31,7 @@ var temp = 123;
 if(true){
 	temp = "1234";
 	let temp;
-	console.log(temp);
+	console.log('temp',temp);
 }
 
 // [!d] 不允许重复声明 Duplicate declaration 

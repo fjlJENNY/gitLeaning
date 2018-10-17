@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>自定义事件</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div class="elem">
+		
+	</div>
+	<script>
+		var targetNode = document.getElementById('some-id');
+		var config = {attributes:true,childList:true,subtree:true};
+		var callback = function(mutationList,observer){
+			for(var mutation of mutationList){
+				if(mutation.type === 'childList'){
+					console.log('A child node has been added or removed');
+				}
+				else if(mutation.type === 'attributes'){
+					console.log('The ' + mutation.attributeName + 'attribute was modified')
+				}
+			}
+		}
+
+
+		var observer = new MutationObserver(callback);
+		observer.observe(targetNode,config);
+		observer.disconnect();
+	</script>
+</body>
+</html>

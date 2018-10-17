@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>自定义事件</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div class="elem">
+		
+	</div>
+	<script>
+		
+
+		var elem = document.getElementsByClassName('elem')[0];
+ 		// --- 上面的是 Event constructor  IE 9 不支持
+		// var event = new Event('build');
+		// 下面的 是添加 自定义事件  ， 生成 customEvent
+		var event = new CustomEvent('build',{detail:new Date()})
+
+		elem.addEventListener('build',eventHandle,false);
+		function eventHandle(e){
+			console.log(e)
+			console.log('This time is ' + e.detail)
+		}
+
+		elem.dispatchEvent(event)
+	</script>
+</body>
+</html>

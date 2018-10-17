@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>自定义事件</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div class="elem">
+		
+	</div>
+	<script>
+		
+
+		var elem = document.getElementsByClassName('elem')[0];
+ 		
+		var event = document.createEvent('Event');
+		// Define that the event name is 'build'.
+		// event .initEvent（type，bubbles，cancelable）;
+		event.initEvent('build',true,true);
+
+		elem.addEventListener('build',eventHandle,false);
+		function eventHandle(e){
+			console.log(e)
+		}
+
+		elem.dispatchEvent(event)
+
+
+		// SimpleGestureEvent.DIRECTION_LEFT
+		// SimpleGestureEvent.DIRECTION_RIGHT
+		// SimpleGestureEvent.DIRECTION_UP
+		// SimpleGestureEvent.DIRECTION_DOWN
+		// SimpleGestureEvent.ROTATION_COUNTCLOCKWISE
+		// SimpleGestureEvent.ROTATION_CLOCKWISE
+	</script>
+</body>
+</html>
