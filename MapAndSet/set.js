@@ -5,16 +5,24 @@ for(let i of s){
 	console.log(i);
 }
 
+console.log(s)
+
+
 
 var set = new Set([1,2,3,4,5,2,3,3,4]);
-console.log([...set]);
+console.log('set 的',set);
 
-// set 内部判断两个值是否不同，使用的算法叫做 [Same-value equality] 主要判断NaN是否等于自身
+// set 内部判断两个值是否不同，使用的算法叫做 [Same-value equality] 主要判断NaN是否等于自身 【注意是NaN】
 // 两个对象总是不相等
 var set = new Set();
 set.add({}); // set.size = 1;
 set.add({}); // set.size = 2;
-console.log(set.size);
+console.log('size ---- ',set.size);
+
+set.add(NaN)
+set.add(NaN)
+console.log(' +++ size ---- ',set.size ,set);
+
 
 // Set 实例属性
 // Set.prototype.constructor 返回Set函数

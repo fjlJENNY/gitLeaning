@@ -2,12 +2,16 @@
 var m = new Map();
 var o = {p:"Hello World"};
 m.set(o,"content");
-console.log(m);
+console.log('数组111',m);
 console.log(m.get(o));
 
 
 var map2 = new Map([{"name":"张三"},{"title":"Author"}]);
-console.log(map2); // 此种方式创建不了新的map2
+console.log('数组2',map2); // 此种方式创建不了新的map2
+
+var map222 = new Map([["name","张三"],["title","Author"]]);
+console.log('数组222',map222); // 此种方式创建不了新的map2
+
 
 
 //map 使用 数组作为参数
@@ -47,3 +51,17 @@ console.log('只有对同一个对象的引用，Map结构才将其视为同一�
 // 		}
 // 	}
 // }
+// 
+// 
+// 
+// 
+const set = new Set([
+		['foo',1],
+		['bar',2]
+	])
+
+for(let i of set.entries()){
+	console.log(i)
+}
+
+console.log('set 的 值',set);

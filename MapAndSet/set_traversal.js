@@ -5,10 +5,9 @@
 // forEach : 使用回调函数遍历每个成员
 
 var set = new Set(['red','green','blue']);
-
-console.log(set);
+ 
 for(let item of set.entries()){
-	console.log(item);
+	console.log(' some entry ,,, entries ',item ,set,set.entries(),set.values(),set.entries() === set.values());
 }
 
 console.log(Set.prototype[Symbol.iterator] === Set.prototype.values);

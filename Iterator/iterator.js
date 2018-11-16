@@ -1,3 +1,5 @@
+// 比较 for...of...      for...in...
+
 // Iterator 是这种机制 。它是一种接口，任何数据结构只要部署Iterator接口，就可以完成遍历操作。
 
 var it = makeIterator(["a","b"]);
@@ -24,6 +26,21 @@ console.log(it.next());
 // 为数据结构 部署Symbol.iterator接口，称为部署了遍历器接口(iterable) 指针对象(Iterator)
 
 //一种数据结构只要部署了Iterator接口，我们称这种数据结构是iterable
+
+
+// [一个数据结构只要具有Symbol.iterator属性，就认为iterable]
+// [默认的 Iterator 接口部署在数据结构的 Symbol.iterator 属性]
+
+
+
+// 原生部署 Symbol.iterator 对象
+// Array | Map | Set | String | TypedArray  | 函数的arguments | NodeList 对象
+
+
+
+
+
+
 
 
 
@@ -81,8 +98,28 @@ var obj = {
 }
 
 for(var i of obj){
-	console.log(i)
+	console.log('例子3-'+i,i)
 }
+
+
+
+
+
+
+
+
+var something = 'heowowo'
+var iteratorSomething = something[Symbol.iterator]();
+
+console.log('遍历器的接口。。。。',iteratorSomething.next)
+
+
+
+
+
+
+
+
 
 
 // 类数组对象  部署 Iterator 接口 可实现 for...of 遍历
@@ -97,4 +134,18 @@ var iterable = {
 for(var i of iterable){
 	console.log(i);
 }
+
+
+
+// 扩展运算符 默认调用 Iterator 接口
+
+
+let arr = 'world'
+console.log('字符串解构','/n',...arr)
+// 了解一下 yield*
+// 
+// 
+// yield* 后面跟的是一个可遍历的结构，它会调用该结构的遍历器接口。
+// 
+
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		let bb = 'aa'
+		var a = {
+			[bb] : 'cc'
+		}
+		console.log(a)
+
+
+
+
+
+		var aa = [1,2,3,5,6,7];
+
+		aa.every(function(item,index,self){
+			if(index ===3){
+				return false;
+			}
+			console.log('正在遍历的元素 index: ' + index,item)
+		})
+	</script>
+</body>
+</html>

@@ -6,11 +6,11 @@ var s2 = Symbol("bar");
 var s3 = Symbol();
 var s4 = Symbol("foo");
 console.log(s1,s2,s3,s4);
-console.log(s1 === s4);
+console.log('s1 === s4',s1 === s4);
 console.log(s2.toString()); // 转换成 string
 //[1.不可运算 2.可显示转换成string 3.Symbol可以转换成布尔值]
-console.log(Boolean(s1));
-console.log(!s4);
+console.log('Boolean(s1)',Boolean(s1));
+console.log('!s4',!s4);
 
 
 //【Symbol 值作为属性名】
@@ -27,7 +27,7 @@ var a = {};
 // console.log(a[mySymbol]);
 // ！！！注意：Symbol 作为对象属性名称时，不能使用点运算符
 a.mySymbol = "hello";
-console.log(a["mySymbol"]); // 此 mySymbol 不是变量
+console.log('a["mySymbol"]',a["mySymbol"]); // 此 mySymbol 不是变量
 
 var b = {
 	[mySymbol](args){},

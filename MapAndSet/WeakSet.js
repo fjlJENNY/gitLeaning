@@ -4,8 +4,8 @@ var ws = new WeakSet();
 ws.add([1,3]);
 
 var b = [3,4];
-//console.log(new WeakSet(b));
-console.log(ws);
+console.log('b is a weakset 值',new WeakSet(b));
+console.log('ws 的值',ws);
 
 const foos = new WeakSet();
 class Foo{
